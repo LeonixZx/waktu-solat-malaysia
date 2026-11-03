@@ -1,0 +1,13 @@
+<resources>
+    <item type="id" name="quran_search"/><item type="id" name="quran_list"/>
+    <item type="id" name="reader_verses"/><item type="id" name="reader_bookmark"/>
+    <item type="id" name="reading_bookmark"/><item type="id" name="collection_tabs"/>
+    <item type="id" name="collection_list"/><item type="id" name="collection_search"/>
+    <item type="id" name="tasbih_tap"/><item type="id" name="tasbih_count"/>
+    <item type="id" name="tasbih_reset"/><item type="id" name="tasbih_goal"/>
+    <item type="id" name="schedule_tabs"/><item type="id" name="schedule_rows"/>
+    <item type="id" name="calendar_grid"/><item type="id" name="reminder_fajr"/>
+    <item type="id" name="reminder_dhuhr"/><item type="id" name="reminder_asr"/>
+    <item type="id" name="reminder_maghrib"/><item type="id" name="reminder_isha"/>
+    <item type="id" name="azan_switch"/><item type="id" name="quran_translation_switch"/>
+<item type="id" name="previous"/><item type="id" name="next"/><item type="id" name="today"/><item type="id" name="date_button"/><item type="id" name="format_switch"/><item type="id" name="dark_switch"/><item type="id" name="name"/><item type="id" name="time"/></resources>

@@ -1,0 +1,1 @@
+<resources><style name="Animation.SettingsPanel" parent="@android:style/Animation"><item name="android:windowEnterAnimation">@anim/settings_enter</item><item name="android:windowExitAnimation">@anim/settings_exit</item></style></resources>

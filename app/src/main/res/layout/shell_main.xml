@@ -1,0 +1,60 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/main_surface"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:background="@color/background">
+
+    <LinearLayout android:id="@+id/navigation_rail_shell" android:layout_width="88dp" android:layout_height="0dp"
+        android:orientation="vertical" android:background="@color/surface" android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent">
+        <FrameLayout android:layout_width="match_parent" android:layout_height="72dp">
+            <ImageView android:layout_width="36dp" android:layout_height="40dp" android:layout_gravity="center"
+                android:scaleType="fitCenter" android:src="@drawable/ic_brand_toolbar" android:contentDescription="@string/app_name"/>
+        </FrameLayout>
+        <com.google.android.material.navigationrail.NavigationRailView android:id="@+id/navigation_rail"
+            android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
+            android:background="@android:color/transparent" app:elevation="0dp" app:menu="@menu/bottom_menu" app:menuGravity="top"
+            app:itemIconTint="@color/nav_item" app:itemTextColor="@color/nav_item" app:itemIconSize="24dp"
+            app:itemTextAppearanceActive="@style/Text.Nav" app:itemTextAppearanceInactive="@style/Text.Nav"
+            app:itemBackground="@drawable/bg_nav_item"
+            app:labelVisibilityMode="labeled"/>
+        <FrameLayout android:layout_width="match_parent" android:layout_height="64dp">
+            <ImageButton android:id="@+id/rail_settings" android:layout_width="48dp" android:layout_height="48dp"
+                android:layout_gravity="center" android:padding="12dp" android:background="@drawable/bg_navigation_utility"
+                android:src="@drawable/ic_settings" app:tint="@color/prayer_text" android:contentDescription="@string/settings"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/permanent_sidebar" android:layout_width="240dp" android:layout_height="0dp"
+        android:orientation="vertical" android:background="@color/surface" android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent">
+        <include layout="@layout/sidebar_identity"/>
+        <com.google.android.material.navigation.NavigationView android:id="@+id/permanent_navigation"
+            android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
+            android:background="@android:color/transparent" app:elevation="0dp" app:menu="@menu/primary_sidebar_menu"
+            app:itemBackground="@drawable/bg_nav_item"
+            app:itemIconTint="@color/nav_item" app:itemTextColor="@color/nav_item" app:itemVerticalPadding="12dp"/>
+        <com.google.android.material.button.MaterialButton android:id="@+id/sidebar_settings"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="56dp"
+            android:layout_marginHorizontal="16dp" android:layout_marginVertical="12dp"
+            android:text="@string/settings" android:textSize="14sp" android:textAllCaps="false" android:gravity="start|center_vertical"
+            android:textColor="@color/prayer_text" android:stateListAnimator="@null" app:cornerRadius="12dp" app:backgroundTint="@color/settings_background"
+            app:icon="@drawable/ic_settings" app:iconTint="@color/prayer_text" app:iconSize="24dp"/>
+    </LinearLayout>
+
+    <com.google.android.material.appbar.MaterialToolbar android:id="@+id/toolbar" android:layout_width="0dp" android:layout_height="64dp"
+        android:background="@color/background" app:titleTextAppearance="@style/Text.Toolbar" app:titleTextColor="@color/text_primary"
+        app:navigationIconTint="@color/prayer_text" app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
+    <androidx.fragment.app.FragmentContainerView android:id="@+id/nav_host" android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp" android:layout_height="0dp" app:defaultNavHost="true" app:navGraph="@navigation/nav_graph"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" app:layout_constraintBottom_toTopOf="@id/bottom_nav_shell"
+        app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
+    <FrameLayout android:id="@+id/bottom_nav_shell" android:layout_width="0dp" android:layout_height="88dp" android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+        <com.google.android.material.bottomnavigation.BottomNavigationView android:id="@+id/bottom_nav" android:layout_width="match_parent"
+            android:layout_height="72dp" android:layout_marginHorizontal="12dp" android:layout_marginVertical="8dp" android:background="@drawable/bg_navigation" app:menu="@menu/bottom_menu"
+            app:itemIconTint="@color/nav_item" app:itemTextColor="@color/nav_item" app:itemIconSize="24dp"
+            app:itemTextAppearanceActive="@style/Text.Nav" app:itemTextAppearanceInactive="@style/Text.Nav"
+            app:labelVisibilityMode="labeled" app:itemHorizontalTranslationEnabled="false" app:elevation="0dp"/>
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,70 @@
+{
+  "data": [
+    {
+      "title_malay": "Subuh",
+      "title_english": "Fajr",
+      "arabic_text_1": "اُصَلّى فَرْضَ الصُّبْحِ رَكْعَتَيْنِ اَدَاءً مَأْمُوْمًا ِللهِ تَعَالَى",
+      "head_text_1_malay": "Niat Solat Fardhu (berjemaah) :",
+      "head_text_1_english": "Fajr Prayer Intention (Ma’mum) :",
+      "malay_translation_1": "Sahaja aku sembahyang fardhu subuh dua rakaat (*) sebagai makmum tunai kerana Allah Ta'ala.",
+      "english_translation_1": "I intend to pray the obligatory Fajr prayer two raka’at as Ma’mum for Allah ta’ala",
+      "arabic_text_2": "اُصَلّى فَرْضَ الصُّبْحِ رَكْعَتَيْنِ اَدَاءً ِللهِ تَعَالَى",
+      "head_text_2_malay": "Niat Solat Fardhu (bersendiri) :",
+      "head_text_2_english": "Fajr Prayer Intention (Individually) :",
+      "malay_translation_2": "Sahaja aku sembahyang fardhu subuh dua rakaat (*) tunai kerana Allah Ta'ala.",
+      "english_translation_2": "I intend to pray the obligatory Fajr prayer in two raka’at for Allah ta’ala."
+    },{
+      "title_malay": "Zohor",
+      "title_english": "Zuhr",
+      "arabic_text_1": "اُصَلّى فَرْضَ الظُّهْرِاَرْبَعَ رَكَعَاتٍ اَدَاءً مَأْمُوْمًا ِللهِ تَعَالَى",
+      "head_text_1_malay": "Niat Solat Fardhu (berjemaah) :",
+      "head_text_1_english": "Zuhr Prayer Intention (Ma’mum) :",
+      "malay_translation_1": "Sahaja aku sembahyang fardhu zohor empat rakaat (*) sebagai makmum tunai kerana Allah Ta'ala.",
+      "english_translation_1": "I intend to pray the obligatory Zuhr prayer in four raka’at as Ma’mum for Allah ta’ala",
+      "arabic_text_2": "اُصَلّى فَرْضَ الظُّهْرِاَرْبَعَ رَكَعَاتٍ اَدَاءً ِللهِ تَعَالَى",
+      "head_text_2_malay": "Niat Solat Fardhu (bersendiri) :",
+      "head_text_2_english": "Zuhr Prayer Intention (Individually) :",
+      "malay_translation_2": "Sahaja aku sembahyang fardhu zohor empat rakaat (*) tunai kerana Allah Ta'ala.",
+      "english_translation_2": "I intend to pray the obligatory Zuhr prayer in four raka’at for Allah ta’ala."
+    },{
+      "title_malay": "Asar",
+      "title_english": "Asr",
+      "arabic_text_1": "اُصَلّى فَرْضَ الْعَصْرِاَرْبَعَ رَكَعَاتٍ اَدَاءً مَأْمُوْمًا ِللهِ تَعَالَى",
+      "head_text_1_malay": "Niat Solat Fardhu (berjemaah) :",
+      "head_text_1_english": "Asr Prayer Intention (Ma’mum) :",
+      "malay_translation_1": "Sahaja aku sembahyang fardhu asar empat rakaat (*) sebagai makmum tunai kerana Allah Ta'ala.",
+      "english_translation_1": "I intend to pray the obligatory Asr prayer in four raka’at as Ma’mum for Allah ta’ala",
+      "arabic_text_2": "اُصَلّى فَرْضَ الْعَصْر ِاَرْبَعَ رَكَعَاتٍ اَدَاءً ِللهِ تَعَالَى",
+      "head_text_2_malay": "Niat Solat Fardhu (bersendiri) :",
+      "head_text_2_english": "Asr Prayer Intention (Individually) :",
+      "malay_translation_2": "Sahaja aku sembahyang fardhu asar empat rakaat (*) tunai kerana Allah Ta'ala.",
+      "english_translation_2": "I intend to pray the obligatory Asr prayer in four raka’at for Allah ta’ala."
+    },{
+      "title_malay": "Maghrib",
+      "title_english": "Maghrib",
+      "arabic_text_1": "اُصَلّى فَرْضَ الْمَغْرِبِ ثَلاَثَ رَكَعَاتٍ اَدَاءً مَأْمُوْمًا ِللهِ تَعَالَى",
+      "head_text_1_malay": "Niat Solat Fardhu (berjemaah) :",
+      "head_text_1_english": "Maghrib Prayer Intention (Ma’mum) :",
+      "malay_translation_1": "Sahaja aku sembahyang fardhu maghrib tiga rakaat (*) sebagai makmum tunai kerana Allah Ta'ala.",
+      "english_translation_1": "I intend to pray the obligatory Maghrib prayer in three raka’at as Ma’mum for Allah ta’ala",
+      "arabic_text_2": "اُصَلّى فَرْضَ الْمَغْرِبِ ثَلاَثَ رَكَعَاتٍ اَدَاءً ِللهِ تَعَالَى",
+      "head_text_2_malay": "Niat Solat Fardhu (bersendiri) :",
+      "head_text_2_english": "Maghrib Prayer Intention (Individually) :",
+      "malay_translation_2": "Sahaja aku sembahyang fardhu maghrib tiga rakaat (*) tunai kerana Allah Ta'ala.",
+      "english_translation_2": "I intend to pray the obligatory Maghrib prayer in three raka’at for Allah ta’ala."
+    },{
+      "title_malay": "Isyak",
+      "title_english": "Isya'",
+      "arabic_text_1": "اُصَلّى فَرْضَ الْعِشَاءِ اَرْبَعَ رَكَعَاتٍ اَدَاءً مَأْمُوْمًا ِللهِ تَعَالَى",
+      "head_text_1_malay": "Niat Solat Fardhu (berjemaah) :",
+      "head_text_1_english": "Isha Prayer Intention (Ma’mum) :",
+      "malay_translation_1": "Sahaja aku sembahyang fardhu 'isyak empat rakaat (*) sebagai makmum tunai kerana Allah Ta'ala.",
+      "english_translation_1": "I intend to pray the obligatory Isha prayer in four raka’at as Ma’mum for Allah ta’ala",
+      "arabic_text_2": "اُصَلّى فَرْضَ الْعِشَاءِ اَرْبَعَ رَكَعَاتٍ اَدَاءً ِللهِ تَعَالَى",
+      "head_text_2_malay": "Niat Solat Fardhu (bersendiri) :",
+      "head_text_2_english": "Isha Prayer Intention (Individually) :",
+      "malay_translation_2": "Sahaja aku sembahyang fardhu 'isyak empat rakaat (*) tunai kerana Allah Ta'ala.",
+      "english_translation_2": "I intend to pray the obligatory Isha prayer in four raka’at for Allah ta’ala."
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "reference": "C:\\Tools\\waktu-re\\base_decoded\\assets\\doa.json",
+    "project": "app/src/main/assets/prayer_guides.json",
+    "matching": true,
+    "sha256": "341ac8970423f64d313a4148e6fd244c99ee3de4db0e4d8a12efc9445eaa149c"
+  },
+  {
+    "reference": "C:\\Tools\\waktu-re\\base_decoded\\assets\\wiridZikir.json",
+    "project": "app/src/main/assets/wirid.json",
+    "matching": true,
+    "sha256": "2e25129bacca64cbd533c97b8ea09bd971f5a22524724440707b550ad07c73b9"
+  },
+  {
+    "reference": "C:\\Tools\\waktu-re\\base_decoded\\assets\\niatSolat.json",
+    "project": "app/src/main/assets/prayer_intentions.json",
+    "matching": true,
+    "sha256": "a5456006ab7902d34aac79346ffd2ad094d15dd5ac7829493c0204a59771550e"
+  },
+  {
+    "reference": "C:\\Tools\\waktu-re\\base_decoded\\assets\\importantIslamicDates.json",
+    "project": "app/src/main/assets/islamic_dates.json",
+    "matching": true,
+    "sha256": "599e2b9f2be07686d5ebe3c1e1071fb7a913f19c0efc45cf71f297afbf91adfd"
+  },
+  {
+    "reference": "C:\\Tools\\waktu-re\\base_decoded\\res\\raw\\azanbiasa.mp3",
+    "project": "app/src/main/res/raw/adhan_standard.mp3",
+    "matching": true,
+    "sha256": "25559ba7877e09fdcac6b1867dc8560d5137a74819e462cd3a48631063fa0eb1"
+  },
+  {
+    "reference": "C:\\Tools\\waktu-re\\base_decoded\\res\\raw\\azansubuh.mp3",
+    "project": "app/src/main/res/raw/adhan_fajr.mp3",
+    "matching": true,
+    "sha256": "dcc67f80480e835d1ea60545dcb7117b358a7d4c794f146286c77e044047ffa7"
+  }
+]

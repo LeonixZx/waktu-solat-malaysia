@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "colors": {
+    "primary": "#8F5920",
+    "primaryDark": "#62401F",
+    "accent": "#E8B86D",
+    "background": "#FCF9F3",
+    "surface": "#FFFFFF",
+    "text": "#28231E",
+    "muted": "#6F6459",
+    "divider": "#E9E0D4",
+    "softGold": "#F6EBD8"
+  },
+  "spacing": [
+    4,
+    8,
+    12,
+    16,
+    24,
+    32
+  ],
+  "radius": {
+    "control": 12,
+    "card": 20,
+    "hero": 28
+  },
+  "breakpoints": [
+    600,
+    840,
+    1200
+  ],
+  "touchTarget": 48
+}

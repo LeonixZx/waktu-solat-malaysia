@@ -1,0 +1,10 @@
+<resources>
+    <item name="library_status" type="id"/>
+    <item name="collection_saved_filter" type="id"/>
+    <item name="tasbih_goal_input" type="id"/>
+    <item name="v31_task_title" type="id"/>
+    <item name="v31_task_offset" type="id"/>
+    <item name="v31_task_anchor" type="id"/>
+    <item name="v31_task_direction" type="id"/>
+    <item name="v31_task_enabled" type="id"/>
+</resources>

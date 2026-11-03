@@ -1,0 +1,634 @@
+{
+  "data":[
+    {
+      "year": "2023",
+      "islamic_year": "1444-1445H",
+      "dates": [
+        {
+          "title": "Hari Israk Mikraj",
+          "title_english": "Isra and Mi'raj Day",
+          "date": "18 Februari 2023",
+          "hijri_date": "27 Rejab 1444"
+        },
+        {
+          "title": "Hari Nisfu Sya'aban",
+          "title_english": "Mid-Sha'ban Day",
+          "date": "7 Mac 2023",
+          "hijri_date": "15 Sya'aban 1444"
+        },
+        {
+          "title": "Ramadan (Hari Pertama)",
+          "title_english": "Ramadan (First Day)",
+          "date": "23 Mac 2023",
+          "hijri_date": "1 Ramadan 1444"
+        },
+        {
+          "title": "Lailatul Qadr bermula",
+          "title_english": "Lailat al-Qadr Begins",
+          "date": "18 April 2023",
+          "hijri_date":"27 Ramadan 1444"
+        },
+        {
+          "title": "Hari Raya Aidilfitri",
+          "title_english": "Eid al-Fitr",
+          "date": "22 April 2023",
+          "hijri_date": "1 Syawal 1444"
+        },
+        {
+          "title": "Musim  Haji bermula",
+          "title_english": "Hajj Season Begins",
+          "date": "27 Jun 2023",
+          "hijri_date": "8 Zulhijjah 1444"
+        },
+        {
+          "title": "Hari Arafah (Wukuf di Arafah)",
+          "title_english": "Arafah Day (Standing at Arafah)",
+          "date": "28 Jun 2023",
+          "hijri_date": "9 Zulhijjah 1444"
+        },
+        {
+          "title": "Hari Raya Aidiladha",
+          "title_english": "Eid al-Adha",
+          "date": "29 Jun 2023",
+          "hijri_date": "10 Zulhijjah 1444"
+        },
+        {
+          "title": "Tahun Baharu Islam",
+          "title_english": "Islamic New Year",
+          "date": "19 Julai 2023",
+          "hijri_date": "1 Muharram 1445"
+        }
+      ]
+    },
+    {
+      "year": "2024",
+      "islamic_year": "1445-1446H",
+      "dates": [
+        {
+          "title": "Hari Israk Mikraj",
+          "title_english": "Isra and Mi'raj Day",
+          "date": "7 Februari 2024",
+          "hijri_date": "27 Rejab 1445"
+        },
+        {
+          "title": "Hari Nisfu Sya'aban",
+          "title_english": "Mid-Sha'ban Day",
+          "date": "25 Februari 2024",
+          "hijri_date": "15 Sya'ban 1445"
+        },
+        {
+          "title": "Ramadan (Hari Pertama)",
+          "title_english": "Ramadan (First Day)",
+          "date": "11 Mac 2024",
+          "hijri_date": "1 Ramadan 1445"
+        },
+        {
+          "title": "Lailatul Qadr bermula",
+          "title_english": "Lailat al-Qadr Begins",
+          "date": "30 Mac 2024",
+          "hijri_date": "20 Ramadan 1445"
+        },
+        {
+          "title": "Hari Raya Aidilfitri",
+          "title_english": "Eid al-Fitr",
+          "date": "10 April 2024",
+          "hijri_date": "1 Syawal 1445"
+        },
+        {
+          "title": "Musim  Haji bermula",
+          "title_english": "Hajj Season Begins",
+          "date": "14 Jun 2024",
+          "hijri_date": "8 Zulhijjah 1445"
+        },
+        {
+          "title": "Hari Arafah (Wukuf di Arafah)",
+          "title_english": "Arafah Day (Standing at Arafah)",
+          "date": "15 Jun 2024",
+          "hijri_date": "9 Zulhijjah 1445"
+        },
+        {
+          "title": "Hari Raya Aidiladha",
+          "title_english": "Eid al-Adha",
+          "date": "16 Jun 2024",
+          "hijri_date": "10 Zulhijjah 1445"
+        },
+        {
+          "title": "Tahun Baharu Islam",
+          "title_english": "Islamic New Year",
+          "date": "8 Julai 2024",
+          "hijri_date": "1 Muharram 1446"
+        }
+      ]
+    },
+    {
+      "year": "2025",
+      "islamic_year": "1446-1447H",
+      "dates":[
+        {
+          "title": "Hari Israk Mikraj",
+          "title_english": "Isra and Mi'raj Day",
+          "date": "27 Januari 2025",
+          "hijri_date": "27 Rejab 1446"
+        },
+        {
+          "title": "Hari Nisfu Sya'aban",
+          "title_english": "Mid-Sha'ban Day",
+          "date": "14 Februari 2025",
+          "hijri_date": "15 Sya'ban 1446"
+        },
+        {
+          "title": "Ramadan (Hari Pertama)",
+          "title_english": "Ramadan (First Day)",
+          "date": "1 Mac 2025",
+          "hijri_date": "1 Ramadan 1446"
+        },
+        {
+          "title": "Lailatul Qadr bermula",
+          "title_english": "Lailat al-Qadr Begins",
+          "date": "20 Mac 2025",
+          "hijri_date": "20 Ramadan 1446"
+        },
+        {
+          "title": "Hari Raya Aidilfitri",
+          "title_english": "Eid al-Fitr",
+          "date": "30 Mac 2025",
+          "hijri_date": "1 Syawal 1446"
+        },
+        {
+          "title": "Musim Haji bermula",
+          "title_english": "Hajj Season Begins",
+          "date": "4 Jun 2025",
+          "hijri_date": "8 Zulhijjah 1446"
+        },
+        {
+          "title": "Hari Arafah (Wukuf di Arafah)",
+          "title_english": "Arafah Day (Standing at Arafah)",
+          "date": "5 Jun 2025",
+          "hijri_date": "9 Zulhijjah 1446"
+        },
+        {
+          "title": "Hari Raya Aidiladha",
+          "title_english": "Eid al-Adha",
+          "date": "6 Jun 2025",
+          "hijri_date": "10 Zulhijjah 1446"
+        },
+        {
+          "title": "Tahun Baharu Islam",
+          "title_english": "Islamic New Year",
+          "date": "27 Jun 2025",
+          "hijri_date": "1 Muharram 1447"
+        }
+      ]
+    },
+    {
+      "year": "2026",
+      "islamic_year": "1447-1448H",
+      "dates":[
+        {
+          "title": "Hari Israk Mikraj",
+          "title_english": "Isra and Mi'raj Day",
+          "date": "16 Januari 2026",
+          "hijri_date": "27 Rejab 1447"
+        },
+        {
+          "title": "Hari Nisfu Sya'aban",
+          "title_english": "Mid-Sha'ban Day",
+          "date": "3 Februari 2026",
+          "hijri_date": "15 Sya'ban 1447"
+        },
+        {
+          "title": "Ramadan (Hari Pertama)",
+          "title_english": "Ramadan (First Day)",
+          "date": "18 Februari 2026",
+          "hijri_date": "1 Ramadan 1447"
+        },
+        {
+          "title": "Lailatul Qadr bermula",
+          "title_english": "Lailat al-Qadr Begins",
+          "date": "9 Mac 2026",
+          "hijri_date": "20 Ramadan 1447"
+        },
+        {
+          "title": "Hari Raya Aidilfitri",
+          "title_english": "Eid al-Fitr",
+          "date":"20 Mac 2026",
+          "hijri_date":"1 Syawal 1447"
+        },
+        {
+          "title": "Musim Haji bermula",
+          "title_english": "Hajj Season Begins",
+          "date": "25 Mei 2026",
+          "hijri_date": "8 Zulhijjah 1447"
+        },
+        {
+          "title": "Hari Arafah (Wukuf di Arafah)",
+          "title_english": "Arafah Day (Standing at Arafah)",
+          "date": "26 Mei 2026",
+          "hijri_date": "9 Zulhijjah 1447"
+        },
+        {
+          "title": "Hari Raya Aidiladha",
+          "title_english": "Eid al-Adha",
+          "date": "27 Mei 2026",
+          "hijri_date": "10 Zulhijjah 1447"
+        },
+        {
+          "title": "Tahun Baharu Islam",
+          "title_english": "Islamic New Year",
+          "date": "17 Jun 2026",
+          "hijri_date": "1 Muharram 1448"
+        }
+      ]
+    },
+    {
+      "year": "2027",
+      "islamic_year": "1448-1449H",
+      "dates": [
+        {
+          "title": "Hari Israk Mikraj",
+          "title_english": "Isra and Mi'raj Day",
+          "date": "6 Januari 2027",
+          "hijri_date": "27 Rejab 1448"
+        },
+        {
+          "title": "Hari Nisfu Sya'aban",
+          "title_english": "Mid-Sha'ban Day",
+          "date": "24 Januari 2027",
+          "hijri_date": "15 Sya'ban 1448"
+        },
+        {
+          "title": "Ramadan (Hari Pertama)",
+          "title_english" :"Ramadan (First Day)",
+          "date": "8 Februari 2027",
+          "hijri_date": "1 Ramadan 1448"
+        },
+        {
+          "title": "Lailatul Qadr bermula",
+          "title_english": "Lailat al-Qadr Begins",
+          "date": "27 Februari 2027",
+          "hijri_date": "20 Ramadan 1448"
+        },
+        {
+          "title": "Hari Raya Aidilfitri",
+          "title_english": "Eid al-Fitr",
+          "date": "10 Mac 2027",
+          "hijri_date": "1 Syawal 1448"
+        },
+        {
+          "title": "Musim Haji bermula",
+          "title_english": "Hajj Season Begins",
+          "date": "14 Mei 2027",
+          "hijri_date": "8 Zulhijjah 1448"
+        },
+        {
+          "title": "Hari Arafah (Wukuf di Arafah)",
+          "title_english": "Arafah Day - Standing at Arafah",
+          "date": "15 Mei 2027",
+          "hijri_date": "9 Zulhijjah 1448"
+        },
+        {
+          "title": "Hari Raya Aidiladha",
+          "title_english": "Eid al-Adha",
+          "date": "16 Mei 2027",
+          "hijri_date": "10 Zulhijjah 1448"
+        },
+        {
+          "title": "Tahun Baharu Islam",
+          "title_english": "Islamic New Year",
+          "date": "6 Jun 2027",
+          "hijri_date": "1 Muharram 1449"
+        }
+      ]
+    },
+    {
+      "year": "2028",
+      "islamic_year": "1449-1450H",
+      "dates": [
+        {
+          "title": "Hari Nisfu Sya'aban",
+          "title_english": "Mid-Sha'ban Day",
+          "date": "13 Januari 2028",
+          "hijri_date": "15 Sya'ban 1449"
+        },
+        {
+          "title": "Ramadan (Hari Pertama)",
+          "title_english": "Ramadan (First Day)",
+          "date": "28 Januari 2028",
+          "hijri_date": "1 Ramadan 1449"
+        },
+        {
+          "title": "Lailatul Qadr bermula",
+          "title_english": "Lailat al-Qadr Begins",
+          "date": "16 Februari 2028",
+          "hijri_date": "20 Ramadan 1449"
+        },
+        {
+          "title": "Hari Raya Aidilfitri",
+          "title_english": "Eid al-Fitr",
+          "date": "27 Februari 2028",
+          "hijri_date": "1 Syawal 1449"
+        },
+        {
+          "title": "Musim Haji bermula",
+          "title_english": "Hajj Season Begins",
+          "date": "3 Mei 2028",
+          "hijri_date": "8 Zulhijjah 1449"
+        },
+        {
+          "title": "Hari Arafah (Wukuf di Arafah)",
+          "title_english": "Arafah Day - Standing at Arafah",
+          "date": "4 Mei 2028",
+          "hijri_date": "9 Zulhijjah 1449"
+        },
+        {
+          "title": "Hari Raya Aidiladha",
+          "title_english": "Eid al-Adha",
+          "date": "5 Mei 2028",
+          "hijri_date": "10 Zulhijjah 1449"
+        },
+        {
+          "title": "Tahun Baharu Islam",
+          "title_english": "Islamic New Year",
+          "date": "25 Mei 2028",
+          "hijri_date": "1 Muharram 1450"
+        },
+        {
+          "title": "Hari Asy-syura",
+          "title_english": "Day of Ashura",
+          "date": "3 Jun 2028",
+          "hijri_date": "10 Muharram 1450"
+        }
+      ]
+    },
+    {
+      "year": "2029",
+      "islamic_year": "1450-1451H",
+      "dates": [
+        {
+          "title": "Ramadan (Hari Pertama)",
+          "title_english": "Ramadan (First Day)",
+          "date": "16 Januari 2029",
+          "hijri_date": "1 Ramadan 1450"
+        },
+        {
+          "title": "Lailatul Qadr bermula",
+          "title_english": "Lailat al-Qadr Begins",
+          "date": "10 Februari 2029",
+          "hijri_date": "26 Ramadan 1450"
+        },
+        {
+          "title": "Hari Raya Aidilfitri",
+          "title_english": "Eid al-Fitr",
+          "date": "14 Februari 2029",
+          "hijri_date": "1 Syawal 1450"
+        },
+        {
+          "title": "Musim Haji bermula",
+          "title_english": "Hajj Season Begins",
+          "date": "22 April 2029",
+          "hijri_date": "8 Zulhijjah 1450"
+        },
+        {
+          "title": "Hari Arafah (Wukuf di Arafah)",
+          "title_english": "Arafah Day - Standing at Arafah",
+          "date": "23 April 2029",
+          "hijri_date": "9 Zulhijjah 1450"
+        },
+        {
+          "title": "Hari Raya Aidiladha",
+          "title_english": "Eid al-Adha",
+          "date": "24 April 2029",
+          "hijri_date": "10 Zulhijjah 1450"
+        },
+        {
+          "title": "Tahun Baharu Islam",
+          "title_english": "Islamic New Year",
+          "date": "14 Mei 2029",
+          "hijri_date": "1 Muharram 1451"
+        },
+        {
+          "title": "Hari Asy-syura",
+          "title_english": "Day of Ashura",
+          "date": "23 Mei 2029",
+          "hijri_date": "10 Muharram 1451"
+        },
+        {
+          "title": "Maulidur Rasul (Hari Keputeraan Nabi Muhammad SWT)",
+          "title_english": "Mawlid al-Nabi (Prophet Muhammad's Birthday)",
+          "date": "24 Julai 2029",
+          "hijri_date": "12 Rabiul Awal 1451"
+        }
+      ]
+    },
+    {
+      "year": "2030",
+      "islamic_year": "1451-1452H",
+      "dates": [
+        {
+          "title": "Ramadan (Hari Pertama)",
+          "title_english": "Ramadan (First Day)",
+          "date": "5 Januari 2030",
+          "hijri_date": "1 Ramadan 1451"
+        },
+        {
+          "title": "Lailatul Qadr bermula",
+          "title_english": "Lailat al-Qadr Begins",
+          "date": "30 Januari 2030",
+          "hijri_date": "26 Ramadan 1451"
+        },
+        {
+          "title": "Hari Raya Aidilfitri",
+          "title_english": "Eid al-Fitr",
+          "date": "11 April 2030",
+          "hijri_date": "1 Syawal 1451"
+        },
+        {
+          "title": "Musim Haji bermula",
+          "title_english": "Hajj Season Begins",
+          "date": "12 April 2030",
+          "hijri_date": "8 Zulhijjah 1451"
+        },
+        {
+          "title": "Hari Arafah (Wukuf di Arafah)",
+          "title_english": "Arafah Day - Standing at Arafah",
+          "date": "13 April 2030",
+          "hijri_date": "9 Zulhijjah 1451"
+        },
+        {
+          "title": "Hari Raya Aidiladha",
+          "title_english": "Eid al-Adha",
+          "date": "3 Mei 2030",
+          "hijri_date": "10 Zulhijjah 1451"
+        },
+        {
+          "title": "Tahun Baharu Islam",
+          "title_english": "Islamic New Year",
+          "date": "12 Mei 2030",
+          "hijri_date": "1 Muharram 1452"
+        },
+        {
+          "title": "Hari Asy-syura",
+          "title_english": "Day of Ashura",
+          "date": "13 Julai 2030",
+          "hijri_date": "10 Muharram 1452"
+        },
+        {
+          "title": "Maulidur Rasul (Hari Keputeraan Nabi Muhammad SWT)",
+          "title_english": "Mawlid al-Nabi (Prophet Muhammad's Birthday)",
+          "date": "23 November 2030",
+          "hijri_date": "12 Rabiul Awal 1452"
+        }
+      ]
+    },
+    {
+      "year": "2031",
+      "islamic_year": "1452-1453H",
+      "dates": [
+        {
+          "title": "Lailatul Qadr bermula",
+          "title_english": "Lailat al-Qadr Begins",
+          "date": "20 Januari 2031",
+          "hijri_date": "26 Ramadan 1452"
+        },
+        {
+          "title": "Hari Raya Aidilfitri",
+          "title_english": "Eid al-Fitr",
+          "date": "24 Januari 2031",
+          "hijri_date": "1 Syawal 1452"
+        },
+        {
+          "title": "Musim Haji bermula",
+          "title_english": "Hajj Season Begins",
+          "date": "31 Mac 2031",
+          "hijri_date": "8 Zulhijjah 1452"
+        },
+        {
+          "title": "Hari Arafah (Wukuf di Arafah)",
+          "title_english": "Arafah Day - Standing at Arafah",
+          "date": "1 April 2031",
+          "hijri_date": "9 Zulhijjah 1452"
+        },
+        {
+          "title": "Hari Raya Aidiladha",
+          "title_english": "Eid al-Adha",
+          "date": "2 April 2031",
+          "hijri_date": "10 Zulhijjah 1452"
+        },
+        {
+          "title": "Tahun Baharu Islam",
+          "title_english": "Islamic New Year",
+          "date": "23 April 2031",
+          "hijri_date": "1 Muharram 1453"
+        },
+        {
+          "title": "Hari Asy-syura",
+          "title_english": "Day of Ashura",
+          "date": "2 Mei 2031",
+          "hijri_date": "10 Muharram 1453"
+        },
+        {
+          "title": "Maulidur Rasul (Hari Keputeraan Nabi Muhammad SWT)",
+          "title_english": "Mawlid al-Nabi (Prophet Muhammad's Birthday)",
+          "date": "2 Julai 2031",
+          "hijri_date": "12 Rabiul Awal 1453"
+        },
+        {
+          "title": "Hari Israk Mikraj",
+          "title_english": "Isra and Mi'raj Day",
+          "date": "12 November 2031",
+          "hijri_date": "27 Rejab 1453"
+        },
+        {
+          "title": "Hari Nisfu Sya'aban",
+          "title_english": "Mid-Sha'ban Day",
+          "date": "30 November 2031",
+          "hijri_date": "15 Sya'aban 1453"
+        },
+        {
+          "title": "Ramadan (Hari Pertama)",
+          "title_english": "Ramadan (First Day)",
+          "date": "15 Disember 2031",
+          "hijri_date": "1 Ramadan 1453"
+        }
+      ]
+    },
+    {
+      "year": "2032",
+      "islamic_year": "1453-1454H",
+      "dates": [
+        {
+          "title": "Lailatul Qadr bermula",
+          "title_english": "Lailat al-Qadr Begins",
+          "date": "9 Januari 2032",
+          "hijri_date": "26 Ramadan 1453"
+        },
+        {
+          "title": "Hari Raya Aidilfitri",
+          "title_english": "Eid al-Fitr",
+          "date": "14 Januari 2032",
+          "hijri_date": "1 Syawal 1453"
+        },
+        {
+          "title": "Musim Haji bermula",
+          "title_english": "Hajj Season Begins",
+          "date": "20 Mac 2032",
+          "hijri_date": "8 Zulhijjah 1453"
+        },
+        {
+          "title": "Hari Arafah (Wukuf di Arafah)",
+          "title_english": "Arafah Day - Standing at Arafah",
+          "date": "21 Mac 2032",
+          "hijri_date": "9 Zulhijjah 1453"
+        },
+        {
+          "title": "Hari Raya Aidiladha",
+          "title_english": "Eid al-Adha",
+          "date": "22 Mac 2032",
+          "hijri_date": "10 Zulhijjah 1453"
+        },
+        {
+          "title": "Tahun Baharu Islam",
+          "title_english": "Islamic New Year",
+          "date": "11 April 2032",
+          "hijri_date": "1 Muharram 1454"
+        },
+        {
+          "title": "Hari Asy-syura",
+          "title_english": "Day of Ashura",
+          "date": "20 April 2032",
+          "hijri_date": "10 Muharram 1454"
+        },
+        {
+          "title": "Maulidur Rasul (Hari Keputeraan Nabi Muhammad SWT)",
+          "title_english": "Mawlid al-Nabi (Prophet Muhammad's Birthday)",
+          "date": "20 Jun 2032",
+          "hijri_date":"12 Rabiul Awal 1454"
+        },
+        {
+          "title": "Hari Israk Mikraj",
+          "title_english": "Isra and Mi'raj Day",
+          "date": "1 November 2032",
+          "hijri_date": "27 Rejab 1454"
+        },
+        {
+          "title": "Hari Nisfu Sya'aban",
+          "title_english": "Mid-Sha'ban Day",
+          "date": "18 November 2032",
+          "hijri_date": "15 Sya'aban 1454"
+        },
+        {
+          "title": "Ramadan (Hari Pertama)",
+          "title_english": "Ramadan (First Day)",
+          "date": "4 Disember 2032",
+          "hijri_date": "1 Ramadan 1454"
+        },
+        {
+          "title": "Lailatul Qadr bermula",
+          "title_english": "Lailat al-Qadr Begins",
+          "date": "29 Disember 2032",
+          "hijri_date": "26 Ramadan 1454"
+        }
+      ]
+    }
+  ]
+}

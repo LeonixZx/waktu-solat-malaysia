@@ -1,0 +1,13 @@
+<resources>
+    <color name="background">#171410</color>
+    <color name="surface">#25201A</color>
+    <color name="text_primary">#F7EEDD</color>
+    <color name="text_secondary">#BDAF9B</color>
+    <color name="prayer_text">#E8BB7D</color>
+    <color name="prayer_selected">#483523</color>
+    <color name="divider">#44382C</color>
+    <color name="soft_blue">#28303D</color>
+    <color name="soft_purple">#352C3D</color>
+    <color name="soft_rose">#402D29</color>
+    <color name="soft_gold">#3D3020</color>
+</resources>

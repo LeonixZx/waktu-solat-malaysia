@@ -1,0 +1,307 @@
+{
+  "source": "https://www.e-solat.gov.my/",
+  "retrievedUtc": "2026-11-01T22:49:15Z",
+  "description": "Geographic prayer-zone facts retrieved directly from JAKIM; not from an APK.",
+  "zones": [
+    {
+      "code": "JHR01",
+      "state": "Johor",
+      "districts": "Pulau Aur dan Pulau Pemanggil"
+    },
+    {
+      "code": "JHR02",
+      "state": "Johor",
+      "districts": "Johor Bahru, Kota Tinggi, Mersing, Kulai"
+    },
+    {
+      "code": "JHR03",
+      "state": "Johor",
+      "districts": "Kluang, Pontian"
+    },
+    {
+      "code": "JHR04",
+      "state": "Johor",
+      "districts": "Batu Pahat, Muar, Segamat, Gemas Johor, Tangkak"
+    },
+    {
+      "code": "KDH01",
+      "state": "Kedah",
+      "districts": "Kota Setar, Kubang Pasu, Pokok Sena (Daerah Kecil)"
+    },
+    {
+      "code": "KDH02",
+      "state": "Kedah",
+      "districts": "Kuala Muda, Yan, Pendang"
+    },
+    {
+      "code": "KDH03",
+      "state": "Kedah",
+      "districts": "Padang Terap, Sik"
+    },
+    {
+      "code": "KDH04",
+      "state": "Kedah",
+      "districts": "Baling"
+    },
+    {
+      "code": "KDH05",
+      "state": "Kedah",
+      "districts": "Bandar Baharu, Kulim"
+    },
+    {
+      "code": "KDH06",
+      "state": "Kedah",
+      "districts": "Langkawi"
+    },
+    {
+      "code": "KDH07",
+      "state": "Kedah",
+      "districts": "Puncak Gunung Jerai"
+    },
+    {
+      "code": "KTN01",
+      "state": "Kelantan",
+      "districts": "Bachok, Kota Bharu, Machang, Pasir Mas, Pasir Puteh, Tanah Merah, Tumpat, Kuala Krai, Mukim Chiku"
+    },
+    {
+      "code": "KTN02",
+      "state": "Kelantan",
+      "districts": "Gua Musang (Daerah Galas Dan Bertam), Jeli, Jajahan Kecil Lojing"
+    },
+    {
+      "code": "MLK01",
+      "state": "Melaka",
+      "districts": "SELURUH NEGERI MELAKA"
+    },
+    {
+      "code": "NGS01",
+      "state": "Negeri Sembilan",
+      "districts": "Tampin, Jempol"
+    },
+    {
+      "code": "NGS02",
+      "state": "Negeri Sembilan",
+      "districts": "Jelebu, Kuala Pilah, Rembau"
+    },
+    {
+      "code": "NGS03",
+      "state": "Negeri Sembilan",
+      "districts": "Port Dickson, Seremban"
+    },
+    {
+      "code": "PHG01",
+      "state": "Pahang",
+      "districts": "Pulau Tioman"
+    },
+    {
+      "code": "PHG02",
+      "state": "Pahang",
+      "districts": "Kuantan, Pekan, Muadzam Shah"
+    },
+    {
+      "code": "PHG03",
+      "state": "Pahang",
+      "districts": "Jerantut, Temerloh, Maran, Bera, Chenor, Jengka"
+    },
+    {
+      "code": "PHG04",
+      "state": "Pahang",
+      "districts": "Bentong, Lipis, Raub"
+    },
+    {
+      "code": "PHG05",
+      "state": "Pahang",
+      "districts": "Genting Sempah, Janda Baik, Bukit Tinggi"
+    },
+    {
+      "code": "PHG06",
+      "state": "Pahang",
+      "districts": "Cameron Highlands, Genting Higlands, Bukit Fraser"
+    },
+    {
+      "code": "PHG07",
+      "state": "Pahang",
+      "districts": "Daerah Rompin, (Mukim Rompin, Mukim Endau, Mukim Pontian)"
+    },
+    {
+      "code": "PLS01",
+      "state": "Perlis",
+      "districts": "Kangar, Padang Besar, Arau"
+    },
+    {
+      "code": "PNG01",
+      "state": "Pulau Pinang",
+      "districts": "Seluruh Negeri Pulau Pinang"
+    },
+    {
+      "code": "PRK01",
+      "state": "Perak",
+      "districts": "Tapah, Slim River, Tanjung Malim"
+    },
+    {
+      "code": "PRK02",
+      "state": "Perak",
+      "districts": "Kuala Kangsar, Sg. Siput , Ipoh, Batu Gajah, Kampar"
+    },
+    {
+      "code": "PRK03",
+      "state": "Perak",
+      "districts": "Lenggong, Pengkalan Hulu, Grik"
+    },
+    {
+      "code": "PRK04",
+      "state": "Perak",
+      "districts": "Temengor, Belum"
+    },
+    {
+      "code": "PRK05",
+      "state": "Perak",
+      "districts": "Kg Gajah, Teluk Intan, Bagan Datuk, Seri Iskandar, Beruas, Parit, Lumut, Sitiawan, Pulau Pangkor"
+    },
+    {
+      "code": "PRK06",
+      "state": "Perak",
+      "districts": "Selama, Taiping, Bagan Serai, Parit Buntar"
+    },
+    {
+      "code": "PRK07",
+      "state": "Perak",
+      "districts": "Bukit Larut"
+    },
+    {
+      "code": "SBH01",
+      "state": "Sabah",
+      "districts": "Bahagian Sandakan (Timur), Bukit Garam, Semawang, Temanggong, Tambisan, Bandar Sandakan, Sukau"
+    },
+    {
+      "code": "SBH02",
+      "state": "Sabah",
+      "districts": "Beluran, Telupid, Pinangah, Terusan, Kuamut, Bahagian Sandakan (Barat)"
+    },
+    {
+      "code": "SBH03",
+      "state": "Sabah",
+      "districts": "Lahad Datu, Silabukan, Kunak, Sahabat, Semporna, Tungku, Bahagian Tawau  (Timur)"
+    },
+    {
+      "code": "SBH04",
+      "state": "Sabah",
+      "districts": "Bandar Tawau, Balong, Merotai, Kalabakan, Bahagian Tawau (Barat)"
+    },
+    {
+      "code": "SBH05",
+      "state": "Sabah",
+      "districts": "Kudat, Kota Marudu, Pitas, Pulau Banggi, Bahagian Kudat"
+    },
+    {
+      "code": "SBH06",
+      "state": "Sabah",
+      "districts": "Gunung Kinabalu"
+    },
+    {
+      "code": "SBH07",
+      "state": "Sabah",
+      "districts": "Kota Kinabalu, Ranau, Kota Belud, Tuaran, Penampang, Papar, Putatan, Bahagian Pantai Barat"
+    },
+    {
+      "code": "SBH08",
+      "state": "Sabah",
+      "districts": "Pensiangan, Keningau, Tambunan, Nabawan, Bahagian Pendalaman (Atas)"
+    },
+    {
+      "code": "SBH09",
+      "state": "Sabah",
+      "districts": "Beaufort, Kuala Penyu, Sipitang, Tenom, Long Pasia, Membakut, Weston, Bahagian Pendalaman (Bawah)"
+    },
+    {
+      "code": "SGR01",
+      "state": "Selangor",
+      "districts": "Gombak, Petaling, Sepang, Hulu Langat, Hulu Selangor, S.Alam"
+    },
+    {
+      "code": "SGR02",
+      "state": "Selangor",
+      "districts": "Kuala Selangor, Sabak Bernam"
+    },
+    {
+      "code": "SGR03",
+      "state": "Selangor",
+      "districts": "Klang, Kuala Langat"
+    },
+    {
+      "code": "SWK01",
+      "state": "Sarawak",
+      "districts": "Limbang, Lawas, Sundar, Trusan"
+    },
+    {
+      "code": "SWK02",
+      "state": "Sarawak",
+      "districts": "Miri, Niah, Bekenu, Sibuti, Marudi"
+    },
+    {
+      "code": "SWK03",
+      "state": "Sarawak",
+      "districts": "Pandan, Belaga, Suai, Tatau, Sebauh, Bintulu"
+    },
+    {
+      "code": "SWK04",
+      "state": "Sarawak",
+      "districts": "Sibu, Mukah, Dalat, Song, Igan, Oya, Balingian, Kanowit, Kapit"
+    },
+    {
+      "code": "SWK05",
+      "state": "Sarawak",
+      "districts": "Sarikei, Matu, Julau, Rajang, Daro, Bintangor, Belawai"
+    },
+    {
+      "code": "SWK06",
+      "state": "Sarawak",
+      "districts": "Lubok Antu, Sri Aman, Roban, Debak, Kabong, Lingga, Engkelili, Betong, Spaoh, Pusa, Saratok"
+    },
+    {
+      "code": "SWK07",
+      "state": "Sarawak",
+      "districts": "Serian, Simunjan, Samarahan, Sebuyau, Meludam"
+    },
+    {
+      "code": "SWK08",
+      "state": "Sarawak",
+      "districts": "Kuching, Bau, Lundu, Sematan"
+    },
+    {
+      "code": "SWK09",
+      "state": "Sarawak",
+      "districts": "Zon Khas (Kampung Patarikan)"
+    },
+    {
+      "code": "TRG01",
+      "state": "Terengganu",
+      "districts": "Kuala Terengganu, Marang, Kuala Nerus"
+    },
+    {
+      "code": "TRG02",
+      "state": "Terengganu",
+      "districts": "Besut, Setiu"
+    },
+    {
+      "code": "TRG03",
+      "state": "Terengganu",
+      "districts": "Hulu Terengganu"
+    },
+    {
+      "code": "TRG04",
+      "state": "Terengganu",
+      "districts": "Dungun, Kemaman"
+    },
+    {
+      "code": "WLY01",
+      "state": "Wilayah Persekutuan",
+      "districts": "Kuala Lumpur, Putrajaya"
+    },
+    {
+      "code": "WLY02",
+      "state": "Wilayah Persekutuan",
+      "districts": "Labuan"
+    }
+  ]
+}

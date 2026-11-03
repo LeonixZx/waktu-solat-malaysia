@@ -1,0 +1,7 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"><group android:checkableBehavior="single">
+    <item android:id="@id/prayerFragment" android:icon="@drawable/ic_home" android:title="@string/utama"/>
+    <item android:id="@id/quranFragment" android:icon="@drawable/ic_quran" android:title="@string/al_quran"/>
+    <item android:id="@id/worshipFragment" android:icon="@drawable/ic_worship" android:title="@string/worship"/>
+    <item android:id="@id/exploreFragment" android:icon="@drawable/ic_explore" android:title="@string/explore"/>
+    <item android:id="@id/savedFragment" android:icon="@drawable/ic_bookmark" android:title="@string/saved"/>
+</group></menu>

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "timeZone": "Asia/Kuala_Lumpur",
+  "prayerKeys": [
+    "imsak",
+    "fajr",
+    "syuruk",
+    "dhuha",
+    "dhuhr",
+    "asr",
+    "maghrib",
+    "isha"
+  ],
+  "obligatory": [
+    1,
+    4,
+    5,
+    6,
+    7
+  ],
+  "PrayerSnapshot": [
+    "zone",
+    "date",
+    "timeZone",
+    "times",
+    "hijri",
+    "source",
+    "retrievedAt",
+    "freshness"
+  ],
+  "CatalogEntry": [
+    "id",
+    "type",
+    "provider",
+    "language",
+    "title",
+    "url",
+    "thumbnail"
+  ],
+  "PrayerRelativeReminder": [
+    "id",
+    "title",
+    "anchor",
+    "offsetMinutes",
+    "weekdays",
+    "enabled"
+  ],
+  "BackupBundle": [
+    "schemaVersion",
+    "exportedAt",
+    "preferences",
+    "bookmarks",
+    "reading",
+    "tracker",
+    "reminders"
+  ]
+}

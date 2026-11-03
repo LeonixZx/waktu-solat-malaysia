@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "sdk": "C:/Users/USER/AppData/Local/Android/Sdk",
+  "jdk": "C:/Program Files/Microsoft/jdk-21.0.12.101-hotspot",
+  "applicationId": "com.example.waktusolatmalaysia",
+  "profiles": {
+    "small_phone": {
+      "avd": "WSM_Phone_Small_API34",
+      "api": 34,
+      "device": "pixel_2",
+      "width": 720,
+      "height": 1600,
+      "density": 360,
+      "orientation": "portrait",
+      "keyboard": false
+    },
+    "standard_phone": {
+      "avd": "WSM_Phone_Standard_API34",
+      "api": 34,
+      "device": "pixel_7",
+      "width": 1080,
+      "height": 2400,
+      "density": 420,
+      "orientation": "portrait",
+      "keyboard": false
+    },
+    "large_tablet": {
+      "avd": "WSM_Tablet_Large_API34",
+      "api": 34,
+      "device": "pixel_2",
+      "width": 2560,
+      "height": 1600,
+      "density": 320,
+      "orientation": "landscape",
+      "keyboard": true
+    },
+    "modern_phone": {
+      "avd": "WSM_Phone_Modern_API36",
+      "api": 36,
+      "device": "pixel_7",
+      "width": 1080,
+      "height": 2400,
+      "density": 420,
+      "orientation": "portrait",
+      "keyboard": false
+    },
+    "legacy_api24": {
+      "avd": "WSM_Widget_API24",
+      "api": 24,
+      "device": "pixel_2",
+      "width": 1080,
+      "height": 1920,
+      "density": 420,
+      "orientation": "portrait",
+      "keyboard": false,
+      "managed": false,
+      "gpu": "swiftshader_indirect"
+    },
+    "legacy_api30": {
+      "avd": "WSM_Widget_API30",
+      "api": 30,
+      "device": "pixel_2",
+      "width": 1080,
+      "height": 1920,
+      "density": 420,
+      "orientation": "portrait",
+      "keyboard": false,
+      "managed": false
+    },
+    "legacy_api31": {
+      "avd": "WSM_Widget_API31",
+      "api": 31,
+      "device": "pixel_2",
+      "width": 1080,
+      "height": 1920,
+      "density": 420,
+      "orientation": "portrait",
+      "keyboard": false,
+      "managed": false
+    }
+  },
+  "existingCompatibilityAvds": [
+    "WSM_Widget_API24",
+    "WSM_Widget_API30",
+    "WSM_Widget_API31"
+  ],
+  "smokeClasses": [
+    "com.example.waktusolatmalaysia.PhoneUiV330Test",
+    "com.example.waktusolatmalaysia.SystemBarAppearanceTest"
+  ],
+  "fullClasses": [
+    "com.example.waktusolatmalaysia.WidgetV32Test",
+    "com.example.waktusolatmalaysia.WidgetAppearanceV321Test",
+    "com.example.waktusolatmalaysia.LauncherBrandTest",
+    "com.example.waktusolatmalaysia.PhoneUiV330Test",
+    "com.example.waktusolatmalaysia.SystemBarAppearanceTest",
+    "com.example.waktusolatmalaysia.WidgetTimelineV331Test",
+    "com.example.waktusolatmalaysia.WidgetPreviewV332Test",
+    "com.example.waktusolatmalaysia.WidgetDatesV333Test"
+  ],
+  "fullTestCount": 29
+}

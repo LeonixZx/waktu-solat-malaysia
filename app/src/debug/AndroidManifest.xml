@@ -1,0 +1,3 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+  <instrumentation android:name="com.example.waktusolatmalaysia.debug.TabletProbe" android:targetPackage="com.example.waktusolatmalaysia" android:label="Local tablet verification" android:functionalTest="true"/>
+</manifest>

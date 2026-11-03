@@ -1,0 +1,30 @@
+{
+  "next": {
+    "bytes": 97478,
+    "width": 473,
+    "height": 467,
+    "fixtureDate": "2026-11-03",
+    "source": "Native Timeline renderer; static picker illustration only"
+  },
+  "strip": {
+    "bytes": 99407,
+    "width": 900,
+    "height": 207,
+    "fixtureDate": "2026-11-03",
+    "source": "Native Timeline renderer; static picker illustration only"
+  },
+  "day": {
+    "bytes": 224891,
+    "width": 900,
+    "height": 426,
+    "fixtureDate": "2026-11-03",
+    "source": "Native Timeline renderer; static picker illustration only"
+  },
+  "expanded": {
+    "bytes": 215514,
+    "width": 840,
+    "height": 663,
+    "fixtureDate": "2026-11-03",
+    "source": "Native Timeline renderer; static picker illustration only"
+  }
+}

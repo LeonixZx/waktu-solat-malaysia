@@ -1,0 +1,71 @@
+{
+  "version": "3.3.3",
+  "source": "WidgetDatesV333Test native framework renderer",
+  "fixtureOnly": true,
+  "gregorian": "2026-11-03",
+  "hijri": "1448-05-23",
+  "location": "Kuala Lumpur, Putrajaya",
+  "note": "Labelled illustration; no fixture data is written to production caches. Full Hijri month names; no visible zone codes.",
+  "assets": [
+    {
+      "family": "next",
+      "appearance": "light",
+      "native": "design/widgets-v333/next-light-native.png",
+      "nativeSha256": "e984859a247dc746b728b81096ee05055581d5ee6f10d92145c8de485eb5a7b3",
+      "derivative": "app/src/main/res/drawable-nodpi/widget_preview_next.png",
+      "bytes": 114292,
+      "sha256": "e984859a247dc746b728b81096ee05055581d5ee6f10d92145c8de485eb5a7b3"
+    },
+    {
+      "family": "next",
+      "appearance": "dark",
+      "native": "design/widgets-v333/next-dark-native.png",
+      "nativeSha256": "bc4818f963339312af2adda5fbc92dbee9f9344695d1b677ad5eaba6b4fc3111"
+    },
+    {
+      "family": "strip",
+      "appearance": "light",
+      "native": "design/widgets-v333/strip-light-native.png",
+      "nativeSha256": "73093b7963be5a667fed4883647a438e6aa580ef3c330bc40825974567c66075",
+      "derivative": "app/src/main/res/drawable-nodpi/widget_preview_strip.png",
+      "bytes": 69216,
+      "sha256": "c45744d920b6cd8386bb36e9aef02dee1e2e82e362fca9c75193b9ee16dc91d1"
+    },
+    {
+      "family": "strip",
+      "appearance": "dark",
+      "native": "design/widgets-v333/strip-dark-native.png",
+      "nativeSha256": "b083992b53b7256ba41b8fe45eb1af0250143918a9b0a34d6fb226268987f227"
+    },
+    {
+      "family": "day",
+      "appearance": "light",
+      "native": "design/widgets-v333/day-light-native.png",
+      "nativeSha256": "53a165a62a7aa266dbbe313114924c8e50d20e41f70a7d5c12c17616a0061965",
+      "derivative": "app/src/main/res/drawable-nodpi/widget_preview_day.png",
+      "bytes": 160869,
+      "sha256": "491ea05d6f0da21e944f3348d96dc59c56a13b3442098416e8abce9fb195be68"
+    },
+    {
+      "family": "day",
+      "appearance": "dark",
+      "native": "design/widgets-v333/day-dark-native.png",
+      "nativeSha256": "c4d27f9195cc91ab29836413a73c3b5213b78f395d6638f37743a885a24b4584"
+    },
+    {
+      "family": "expanded",
+      "appearance": "light",
+      "native": "design/widgets-v333/expanded-light-native.png",
+      "nativeSha256": "09fbdac88a36354c52e96ff3a217349967e3fea8a10cd829c3e73fc50c960d41",
+      "derivative": "app/src/main/res/drawable-nodpi/widget_preview_expanded.png",
+      "bytes": 236091,
+      "sha256": "688448977e7e78c6be8f2d1eff449a59dd9b57e557b8a6b1dfe827d34dbfdb1a"
+    },
+    {
+      "family": "expanded",
+      "appearance": "dark",
+      "native": "design/widgets-v333/expanded-dark-native.png",
+      "nativeSha256": "898d160e6322ca404400041fe67c6a443f794f5119e07bdf66e4bcb537604318"
+    }
+  ]
+}

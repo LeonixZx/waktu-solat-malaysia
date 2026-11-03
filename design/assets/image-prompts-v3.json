@@ -1,0 +1,14 @@
+[
+  {
+    "key": "onboarding_v3",
+    "prompt": "Use case: stylized-concept. Asset type: original onboarding illustration for Waktu Solat Malaysia native Android and PWA, wide landscape 3:2. A serene original Malaysian-inspired mosque courtyard at dawn, warm ivory stone, elegant gold dome, slender minaret, subtle arch geometry, soft apricot sky and golden sunlight. Refined simplified editorial illustration, tactile but restrained, calm premium contemporary design. Architecture in lower half and right, generous clean pale ivory upper left for real interface text. No people, no text, no lettering, no calligraphy, no logos, no phone or UI mockup, no green. Must be original, not copied from any UI kit."
+  },
+  {
+    "key": "explore_v3",
+    "prompt": "Use case: stylized-concept. Asset type: original Explore banner for a premium Malaysian Islamic learning app, wide landscape 3:2. A quiet sunlit Islamic library alcove with warm ivory arches, a few beautifully bound closed sand and gold books, delicate geometric light on stone, restrained amber highlights. Simplified sophisticated editorial illustration with soft dimensional materials, calm and welcoming. Books and architectural details on right half, ample clean ivory space on left for actual app copy. No text anywhere, no Arabic or invented lettering, no logos, no screens, no people, no green."
+  },
+  {
+    "key": "ramadan_v3",
+    "prompt": "Use case: stylized-concept. Asset type: original Ramadan banner for Waktu Solat Malaysia, wide landscape 3:2. One refined warm brass lantern glowing beside an ivory arch, small crescent in a warm charcoal evening sky, distant softly silhouetted Malaysian mosque domes. Elegant restrained editorial illustration, honey gold, ivory and warm charcoal only. Subject on right, clean softly illuminated negative space on left for actual UI text. No people, no text, no lettering or calligraphy, no logos, no phone or UI, no green."
+  }
+]

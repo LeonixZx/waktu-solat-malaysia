@@ -1,0 +1,19 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-11-03",
+  "assets": [
+    {
+      "file": "mosque-original.png",
+      "prompt": "Use case: illustration-story\nAsset type: decorative background artwork for native Android prayer widgets\nPrimary request: an original, elegant Malaysian-inspired mosque panorama to sit very faintly behind prayer timetable text.\nScene/backdrop: genuinely transparent background, no sky, no ground rectangle.\nSubject: one graceful mosque dome and two slender minarets with subtle arch details, with a low architectural roofline tapering outward. Generic original architecture, not a replica of a named mosque.\nStyle/medium: refined monochrome engraved architectural illustration, broad soft silhouettes with a few clean delicate lines, premium and calm.\nComposition/framing: wide panorama about 3:2; architecture concentrated in the lower half, principal dome right of centre, plenty of empty transparent space above and on the left for live UI text; entire minarets inside frame.\nColor palette: warm muted champagne gold and sand only, suitable on ivory and espresso UI.\nText: none.\nConstraints: actual transparent alpha; no words, calligraphy, logo, people, photographic sky, stars, borders or watermark. Render clearly enough that the app can apply its own very low opacity. This is a standalone artwork asset, not a widget mockup."
+    },
+    {
+      "file": "logo-first-draft.png",
+      "prompt": "Use case: logo-brand\nAsset type: production Android launcher foreground logo for Waktu Solat Malaysia\nPrimary request: create one original polished gold emblem combining a graceful crescent, an architectural prayer arch and a tiny clock-hand cue into one bold geometric mark.\nStyle/medium: exceptional minimalist flat vector-like brand mark, clean smooth edges, balanced optical weight, simple filled shapes, legible at 24 pixels.\nComposition/framing: single centred standalone mark occupying about 70% of the square canvas, generous genuine transparent space around it for Android adaptive icon cropping. Vertically symmetrical outer arch, asymmetrical crescent inside, avoid fussy details. No enclosing app tile.\nColor palette: rich warm gold #D6A552 with a restrained lighter gold accent, no green. Designed for a deep espresso background.\nText: none.\nConstraints: genuine transparent alpha; one logo only; original design, no existing brand references, no lettering, no calligraphy, no extra stars, no mockup, no shadows, no 3D, no bevels, no hairline strokes, no border around the canvas, no watermark. Keep all significant geometry inside central 70% and make it confident and recognisable."
+    },
+    {
+      "file": "logo-original.png",
+      "prompt": "Use case: precise-object-edit\nAsset type: transparent Android launcher logo foreground\nEdit target: the supplied gold crescent, arch and clock logo.\nChange only the alpha-edge cleanliness and stray pixels: remove ALL scattered specks, gold noise, red fringe and artifacts floating inside or outside the emblem. The empty space inside the arch and around the crescent must be completely transparent and clean. Preserve the exact main silhouette, proportions, clock hands, warm gold fill and centred composition. Make the gold shapes smooth, solid and professional. Keep the transparent background and do not add anything. No text, no mockup.",
+      "input": "logo-first-draft.png"
+    }
+  ]
+}

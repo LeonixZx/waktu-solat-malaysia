@@ -1,0 +1,16 @@
+<resources>
+    <string name="al_quran">Al-Quran</string><string name="koleksi">Koleksi</string>
+    <string name="tasbih">Tasbih</string><string name="kalendar">Kalendar Islam</string>
+    <string name="jadual">Jadual solat</string><string name="utama">Utama</string>
+    <string name="semua">Lihat semua</string><string name="doa">Doa</string>
+    <string name="hadith">Hadis</string><string name="sambung_bacaan">Sambung bacaan</string>
+    <string name="daily_wisdom">Hikmah hari ini</string><string name="feature_heading">Ruang ibadah anda</string>
+    <string name="greeting">Assalamualaikum</string><string name="hero_next">SOLAT SETERUSNYA</string>
+    <string name="qibla_alignment_unknown">Diukur dari utara benar</string>
+    <string name="qibla_aligned">Peranti menghadap arah Kiblat</string>
+    <string name="qibla_turn_left">Putar peranti %1$.0f° ke kiri</string>
+    <string name="qibla_turn_right">Putar peranti %1$.0f° ke kanan</string>
+    <string name="reminder_channel">Peringatan waktu solat</string>
+    <string name="azan_channel">Bacaan azan</string>
+    <string name="stop_azan">Hentikan azan</string>
+</resources>

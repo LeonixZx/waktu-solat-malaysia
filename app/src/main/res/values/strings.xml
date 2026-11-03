@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Original product copy. Prayer names and geographic labels are conventional terms. -->
+    <string name="app_name">Waktu Solat Malaysia</string>
+    <string name="waktu_solat">Waktu Solat</string>
+    <string name="qiblat">Kiblat</string>
+    <string name="location">Zon solat</string>
+    <string name="settings">Pilihan</string>
+    <string name="application_information">Tentang aplikasi</string>
+    <string name="seterusnya">SOLAT SETERUSNYA</string>
+    <string name="imsak">Imsak</string>
+    <string name="subuh">Subuh</string>
+    <string name="syuruk">Syuruk</string>
+    <string name="dhuha">Dhuha</string>
+    <string name="zohor">Zohor</string>
+    <string name="asar">Asar</string>
+    <string name="maghrib">Maghrib</string>
+    <string name="isyak">Isyak</string>
+    <string name="pilihan_negeri_lbl">Negeri atau wilayah</string>
+    <string name="pilihan_lokasi">Zon dan kawasan</string>
+    <string name="pilihan_masa_desc">Paparkan masa bersama penanda AM atau PM.</string>
+    <string name="pilihan_masa_title">Selesa mengikut cara anda.</string>
+    <string name="drawer_subtitle">Teman waktu, setiap hari.</string>
+    <string name="refresh">Segarkan jadual</string>
+    <string name="today">Hari ini</string>
+    <string name="previous_day">Hari sebelumnya</string>
+    <string name="next_day">Hari berikutnya</string>
+    <string name="choose_date">Pilih tarikh</string>
+    <string name="change_location">Tukar lokasi</string>
+    <string name="save_location">Gunakan zon ini</string>
+    <string name="select_district">Pilih negeri dan zon yang sepadan dengan kawasan anda.</string>
+    <string name="location_saved">Zon pilihan anda telah disimpan.</string>
+    <string name="loading">Menyemak waktu untuk kawasan anda…</string>
+    <string name="no_data">Waktu belum tersedia. Sambungkan internet, kemudian segarkan jadual.</string>
+    <string name="network_error">Kami belum dapat mencapai jadual ini. Cuba segarkan selepas sambungan pulih.</string>
+    <string name="cache_status">Tersedia luar talian · Sumber e-Solat JAKIM</string>
+    <string name="live_status">Jadual disegarkan · Sumber e-Solat JAKIM</string>
+    <string name="offline_status">Anda di luar talian. Jadual yang disimpan masih boleh digunakan.</string>
+    <string name="prayer_date">Jadual %1$s</string>
+    <string name="tomorrow_subuh">Subuh esok</string>
+    <string name="tomorrow_unavailable">Waktu Subuh esok belum tersedia</string>
+    <string name="countdown">%1$02d:%2$02d:%3$02d</string>
+    <string name="previous_symbol" translatable="false">‹</string>
+    <string name="next_symbol" translatable="false">›</string>
+    <string name="empty_time">—</string>
+    <string name="zone_label">Zon %1$s · %2$s</string>
+    <string name="hijri_date">%1$s H</string>
+    <string name="format_12h">Format 12 jam</string>
+    <string name="dark_mode">Mod gelap</string>
+    <string name="dark_mode_description">Paparan arang dan emas yang selesa pada waktu malam.</string>
+    <string name="settings_hint">Pilihan anda akan diingati apabila aplikasi dibuka semula.</string>
+    <string name="prayer_source">Jadual waktu solat</string>
+    <string name="source_description">Waktu diperoleh daripada e-Solat JAKIM. Setiap bulan yang dibuka akan disimpan pada peranti, supaya anda boleh merujuknya tanpa internet.</string>
+    <string name="qibla_intro">Arah Kiblat</string>
+    <string name="qibla_help">Pegang peranti rata dan jauhkan daripada objek bermagnet. Jika bacaan berubah-ubah, gerakkan peranti membentuk angka lapan sebelum menyemak semula.</string>
+    <string name="get_location">Tentukan arah saya</string>
+    <string name="location_required">Arah dikira daripada lokasi peranti anda. Benarkan akses lokasi untuk memulakan kompas.</string>
+    <string name="location_wait">Sedang mendapatkan kedudukan anda…</string>
+    <string name="location_failed">Kedudukan belum ditemui. Pastikan lokasi peranti dihidupkan, kemudian cuba lagi.</string>
+    <string name="location_denied">Kompas memerlukan akses lokasi. Anda boleh membenarkannya melalui tetapan peranti.</string>
+    <string name="qibla_degrees">%1$.1f°</string>
+    <string name="coordinates">Lokasi: %1$.5f, %2$.5f · ±%3$.0f m</string>
+    <string name="no_compass">Sensor kompas tiada. Arah yang dipaparkan diukur dari utara benar; sejajarkan utara secara manual.</string>
+    <string name="compass_unreliable">Ketepatan kompas rendah. Tentukur peranti dan jauhkan daripada magnet.</string>
+    <string name="compass_description">Kompas menunjukkan arah Kiblat</string>
+    <string name="about_description">Ruang ringkas untuk menjaga waktu solat. Semak jadual kawasan anda, rancang hari dan cari arah Kiblat dalam satu tempat yang tenang.</string>
+    <string name="about_version">Versi %1$s</string>
+    <string name="about_scope">Pilih zon yang sepadan dengan kawasan anda dan segarkan jadual apabila perlu. Bacaan kompas bergantung pada ketepatan lokasi serta sensor peranti.</string>
+    <string name="missing_zones">Senarai zon tidak dapat dibaca.</string>
+    <string name="nav_today">Hari ini</string>
+    <string name="brand_eyebrow">MALAYSIA · UTC+8</string>
+    <string name="home_intro">Hari ini, lebih teratur.</string>
+    <string name="daily_heading">Jadual harian</string>
+    <string name="countdown_caption">BERBAKI</string>
+    <string name="qibla_quick">Arah Kiblat</string>
+    <string name="location_quick">Pilih kawasan</string>
+    <string name="zone_eyebrow">KAWASAN PILIHAN</string>
+    <string name="zone_title">Pilih zon solat</string>
+    <string name="qibla_eyebrow">KOMPAS KIBLAT</string>
+    <string name="qibla_guide_title">Sebelum anda bermula</string>
+    <string name="preferences_eyebrow">RUANG PERIBADI</string>
+    <string name="display_section">PAPARAN</string>
+    <string name="data_section">DATA WAKTU SOLAT</string>
+    <string name="about_eyebrow">DIREKA UNTUK RUTIN ANDA</string>
+    <string name="about_tagline">Teman waktu,\nsetiap hari.</string>
+    <string name="privacy_note">Lokasi digunakan untuk kompas pada peranti ini. Anda boleh memilih zon solat tanpa memberikan akses lokasi.</string>
+    <string name="zone_note">Zon jadual dan lokasi kompas berfungsi secara berasingan. Menukar zon tidak mengubah lokasi peranti anda.</string>
+    <string name="hijri_readable">%1$d %2$s %3$d H</string>
+    <string-array name="hijri_months">
+        <item>Muharam</item><item>Safar</item><item>Rabiulawal</item><item>Rabiulakhir</item>
+        <item>Jamadilawal</item><item>Jamadilakhir</item><item>Rejab</item><item>Syaaban</item>
+        <item>Ramadan</item><item>Syawal</item><item>Zulkaedah</item><item>Zulhijah</item>
+    </string-array>
+</resources>

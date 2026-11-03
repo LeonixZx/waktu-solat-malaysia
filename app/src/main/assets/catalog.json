@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-11-02",
+  "entries": [
+    {
+      "id": "tvjakim-channel",
+      "type": "channel",
+      "provider": "TV JAKIM",
+      "language": "ms",
+      "title": "TV JAKIM · Siaran & program",
+      "summary": "Saluran rasmi Jabatan Kemajuan Islam Malaysia.",
+      "url": "https://www.youtube.com/@tvjakim/streams",
+      "thumbnail": "",
+      "youtubeId": ""
+    },
+    {
+      "id": "tvjakim-friday-patience",
+      "type": "video",
+      "provider": "TV JAKIM",
+      "language": "ms",
+      "title": "Sabar dan Muhasabah",
+      "summary": "Rakaman solat Jumaat dari Masjid Putra · 8 Januari 2021.",
+      "url": "https://www.youtube.com/watch?v=RKZMt-Dq4g4",
+      "youtubeId": "RKZMt-Dq4g4",
+      "thumbnail": "https://i.ytimg.com/vi/RKZMt-Dq4g4/hqdefault.jpg"
+    },
+    {
+      "id": "tvjakim-friday-community",
+      "type": "video",
+      "provider": "TV JAKIM",
+      "language": "ms",
+      "title": "Khutbah Jumaat · Kepedulian ummah",
+      "summary": "Rakaman TV JAKIM dari Masjid Tuanku Mizan Zainal Abidin · 12 Mac 2021.",
+      "url": "https://www.youtube.com/watch?v=UFE5QydX6Ig",
+      "youtubeId": "UFE5QydX6Ig",
+      "thumbnail": "https://i.ytimg.com/vi/UFE5QydX6Ig/hqdefault.jpg"
+    },
+    {
+      "id": "yaqeen-straight-path",
+      "type": "video",
+      "provider": "Yaqeen Institute",
+      "language": "en",
+      "title": "Guide Us to the Straight Path",
+      "summary": "Quranic supplications with Dr. Omar Husain.",
+      "url": "https://yaqeeninstitute.org/watch/series/conversing-with-god-quranic-duas/episode-1-guide-us-to-the-straight-path-conversing-with-god",
+      "youtubeId": "Cy8P-fv5WWI",
+      "thumbnail": "https://i.ytimg.com/vi/Cy8P-fv5WWI/hqdefault.jpg"
+    },
+    {
+      "id": "yaqeen-patience",
+      "type": "video",
+      "provider": "Yaqeen Institute",
+      "language": "en",
+      "title": "Pour Upon Us Patience",
+      "summary": "A source-hosted episode from Conversing with God.",
+      "url": "https://yaqeeninstitute.org/watch/series/conversing-with-god-quranic-duas/episode-2-pour-upon-us-patience-conversing-with-god",
+      "youtubeId": "",
+      "thumbnail": ""
+    },
+    {
+      "id": "muftiwp-imam",
+      "type": "article",
+      "provider": "Jabatan Mufti Wilayah Persekutuan",
+      "language": "ms",
+      "title": "Muazzin sebagai imam",
+      "summary": "Rujukan Al-Kafi #1896 mengenai azan dan imam solat.",
+      "url": "https://muftiwp.gov.my/ms/artikel/al-kafi-li-al-fatawi/5430-al-kafi-1896-hukum-muazzin-menjadi-imam-solat",
+      "thumbnail": "",
+      "youtubeId": ""
+    },
+    {
+      "id": "muftiwp-sahwi",
+      "type": "article",
+      "provider": "Jabatan Mufti Wilayah Persekutuan",
+      "language": "ms",
+      "title": "Panduan sujud sahwi",
+      "summary": "Rujukan Al-Kafi #1905 mengenai sunat hai’ah dalam solat.",
+      "url": "https://muftiwp.gov.my/ms/artikel/al-kafi-li-al-fatawi/5474-al-kafi-1905-hukum-sujud-sahwi-kerana-meninggalkan-sunat-hai-ah-2",
+      "thumbnail": "",
+      "youtubeId": ""
+    },
+    {
+      "id": "yaqeen-names",
+      "type": "article",
+      "provider": "Yaqeen Institute",
+      "language": "en",
+      "title": "Knowing Allah through His names",
+      "summary": "Jinan Yousef explores the names of Allah in Surah Al-Hashr.",
+      "url": "https://yaqeeninstitute.org/read/paper/how-to-get-closer-to-allah-exploring-the-sequence-of-allahs-names-in-surah-al-hashr",
+      "thumbnail": "",
+      "youtubeId": ""
+    }
+  ]
+}
