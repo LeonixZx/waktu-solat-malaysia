@@ -40,6 +40,8 @@ real notification/5-second audio test buttons. Choosing Azan explains missing ex
   notification, scheduled azan reaching MediaPlayer.start and the Stop notification action.
   Installed APK hash matches the debug artifact. Playback state is verified; it is not a microphone
   measurement of speaker loudness or a guarantee for every OEM battery policy.
+- A further direct phone notification capture passed; its cropped notification card shows the
+  gold project logo. The full private notification-shade screenshot is excluded from delivery.
 - **API34 emulator: 7 native alert tests passed**, covering stable generations, actual prayer and
   personal notifications, dedup/deleted tasks, both bundled recordings, five-second completion,
   Stop, device-selected volume and user-facing test controls.

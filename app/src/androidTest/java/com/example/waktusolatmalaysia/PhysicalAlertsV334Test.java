@@ -45,11 +45,33 @@ public class PhysicalAlertsV334Test {
     pending=PendingIntent.getBroadcast(c,33490,i,PendingIntent.FLAG_UPDATE_CURRENT|PendingIntent.FLAG_IMMUTABLE);
     assertTrue(ReminderScheduler.schedule(c,pending,Instant.ofEpochMilli(when).atZone(ZoneId.of("Asia/Kuala_Lumpur"))));
   }
-  @Test public void phoneReceivesBrandedNotificationFromAlarmManager(){
+  @Test public void phoneReceivesBrandedNotificationFromAlarmManager()throws Exception{
     try(var scenario=ActivityScenario.launch(MainActivity.class)){
       alarm(PrayerMode.NOTIFICATION);await(()->notification(104)!=null,"Phone must receive prayer notification");
       assertEquals(R.drawable.ic_notification_brand,notification(104).getSmallIcon().getResId());
       assertNotNull(notification(104).getLargeIcon());
+      if(InstrumentationRegistry.getArguments().getString("captureNotification","").equals("true")){
+        var inst=InstrumentationRegistry.getInstrumentation();
+        var device=androidx.test.uiautomator.UiDevice.getInstance(inst);
+        device.executeShellCommand("cmd statusbar expand-notifications");SystemClock.sleep(1000);
+        var image=inst.getUiAutomation().takeScreenshot();assertNotNull(image);
+        java.io.File dir=new java.io.File(c.getExternalFilesDir(null),"alerts-v334");dir.mkdirs();
+        try(var out=new java.io.FileOutputStream(new java.io.File(dir,"phone-notification-private.png"))){image.compress(android.graphics.Bitmap.CompressFormat.PNG,100,out);}
+        var title=device.findObject(androidx.test.uiautomator.By.textContains("Zohor"));
+        if(title!=null){
+          var item=title;
+          for(int i=0;i<8&&item.getParent()!=null;i++){
+            var candidate=item.getParent();
+            if(candidate.getVisibleBounds().height()>image.getHeight()/2)break;
+            item=candidate;
+            if(item.getVisibleBounds().width()>image.getWidth()*.75&&item.getVisibleBounds().height()>100)break;
+          }
+          var rect=item.getVisibleBounds();
+          if(rect.width()>0&&rect.height()>0){var crop=android.graphics.Bitmap.createBitmap(image,rect.left,rect.top,rect.width(),rect.height());
+            try(var out=new java.io.FileOutputStream(new java.io.File(dir,"phone-prayer-notification.png"))){crop.compress(android.graphics.Bitmap.CompressFormat.PNG,100,out);}crop.recycle();}
+        }
+        image.recycle();device.executeShellCommand("cmd statusbar collapse");
+      }
     }
   }
   @Test public void phoneReceivesAzanAndStopActionStopsAudio()throws Exception{
