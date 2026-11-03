@@ -9,6 +9,8 @@ This review did not change Android/PWA runtime code, package/version, personal-d
 - Archived 50 obsolete generator/packaging, preview and v2 diagnostic files locally before removing
   them from the active tree; approximately 3.7MB. No original installer or recovery archive was deleted.
 - Organized 23 historical documents under `docs/history/` and repaired local documentation links.
+- Removed two redundant public QA delivery bundles from Releases after verifying exact local
+  backup copies. Kept all APKs and source/recovery archives; refreshed public checksum lists.
 - Added install/build/troubleshooting/contribution/security guides, issue forms and a PR template.
 - Added original decorative README art and real emulator screenshots with public sample data.
 - Added staged-byte privacy checks and five regression tests, broader ignore rules, full-history
@@ -30,6 +32,10 @@ This review did not change Android/PWA runtime code, package/version, personal-d
 - A separate exported checkout built the Android debug APK with the included wrapper, without
   build-cache reuse: 46 JVM tests passed; lint had 0 errors and 605 existing warnings. PWA `npm ci`,
   all 17 unit tests and its production/service-worker build passed. Five privacy-tool tests passed.
+- [GitHub Actions verification of commit 9a22741](https://github.com/LeonixZx/waktu-solat-malaysia/actions/runs/41629851493)
+  passed privacy, Android and PWA jobs. The uploaded `android-debug` APK was downloaded, its
+  included checksum matched, and Android `apksigner verify` passed. No test APK was installed
+  over a user's existing installation for this repository-only review.
 - `npm audit --omit=dev` reported no production dependency advisories at review time. The full audit
   reported 10 low/moderate development-tool chain findings (no high/critical). They involve the PWA
   build chain; the audit proposes a major plugin change. No forced downgrade/major dependency change
