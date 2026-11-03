@@ -15,6 +15,15 @@ published with the release. GitHub Actions repeats Android unit/lint/build and P
 checks for future commits and pull requests. A source checkout needs JDK21/SDK34 and Node.js;
 it does not need a system Gradle or the original local project directory.
 
+Confirmed: an unauthenticated public clone of commit
+`PRIVACY_REWRITTEN_SOURCE_COMMIT` built Android debug/unit/lint from a separate temporary
+directory with JDK21 and SDK34, without the original source/build folders. All 46 Android JVM
+tests passed. In that same independent clone, `npm ci`, PWA tests and `npm run build` passed.
+The later documentation/CI fix does not change application source. The first cloud Android job
+exposed a deprecated default `tools` package in the SDK setup action; the workflow explicitly
+selects `platform-tools` and installs SDK34/Build Tools34.0.0. Cloud results are linked in the
+final release verification.
+
 Versioned APKs, SHA-256 sums and source/recovery archives are distributed as GitHub Release
 assets rather than bloating Git history with compiled outputs. The public source archive contains
 the editable project; anyone can clone or fork it subject to the applicable licences.

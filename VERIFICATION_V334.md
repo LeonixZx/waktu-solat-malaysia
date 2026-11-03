@@ -45,7 +45,8 @@ real notification/5-second audio test buttons. Choosing Azan explains missing ex
   Stop, device-selected volume and user-facing test controls.
 - **API34 cold-process checks: notification and azan both delivered** after confirming the app
   process was absent. The normal Application startup/reschedule path was exercised.
-- API24 compatibility results are recorded separately in the release manifest and test logs.
+- **API24 emulator: 7 native tests and both cold-process deliveries passed**, with healthy
+  post-test System UI and the established compatibility graphics backend.
 - Fresh phone snapshots retain all 3 existing app preference keys, 11 meaningful personal keys,
   the original placed-widget configuration, and all four existing cached monthly schedules
   (allowing only upstream server timestamp refresh). An additional widget configuration appeared
