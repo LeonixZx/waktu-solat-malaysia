@@ -17,3 +17,13 @@ web/test-results/
 web/playwright-report/
 web/*.tsbuildinfo
 deliverables/
+.recovery/
+**/__pycache__/
+**/.pytest_cache/
+.env
+.env.*
+!.env.example
+*.p12
+*.pem
+*.key
+*.log

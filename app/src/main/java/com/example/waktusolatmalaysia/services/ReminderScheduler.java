@@ -28,7 +28,7 @@ public final class ReminderScheduler {
     List<PrayerDay> days =
         new PrayerRepository(c)
             .cachedDays(zone, now.toLocalDate().minusDays(1), now.toLocalDate().plusDays(9));
-    String generation = UUID.randomUUID().toString();
+    String generation = generation(c);
     store.set("alarm_generation", generation);
     for (int i : PrayerDay.OBLIGATORY) {
       PendingIntent legacy =
@@ -53,8 +53,8 @@ public final class ReminderScheduler {
               .putExtra("zone", zone)
               .putExtra("generation", generation)
               .putExtra("when", time.toInstant().toEpochMilli());
-      schedule(c, pending(c, "prayer/" + i, alarm, i), time);
-      store.set("scheduled_" + i, time.toString());
+      if(schedule(c, pending(c, "prayer/" + i, alarm, i), time))
+        store.set("scheduled_" + i, time.toString());
     }
     Set<String> old = new HashSet<>(Arrays.asList(store.text("scheduled_task_ids", "").split(",")));
     List<PrayerRelativeReminder> tasks = new TaskStore(c).safeLoad();
@@ -73,8 +73,8 @@ public final class ReminderScheduler {
               .putExtra("zone", zone)
               .putExtra("anchor_date", next.anchorDate.toString())
               .putExtra("when", next.time.toInstant().toEpochMilli());
-      schedule(c, pending(c, "task/" + task.id, alarm, 0), next.time);
-      store.set("scheduled_task_" + task.id, next.time.toString());
+      if(schedule(c, pending(c, "task/" + task.id, alarm, 0), next.time))
+        store.set("scheduled_task_" + task.id, next.time.toString());
     }
     for (String id : old)
       if (!id.isEmpty())
@@ -90,7 +90,7 @@ public final class ReminderScheduler {
         PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
   }
 
-  public static void schedule(Context c, PendingIntent pending, ZonedDateTime time) {
+  public static boolean schedule(Context c, PendingIntent pending, ZonedDateTime time) {
     AlarmManager a = (AlarmManager) c.getSystemService(Context.ALARM_SERVICE);
     try {
       if (exact(c))
@@ -98,7 +98,17 @@ public final class ReminderScheduler {
             AlarmManager.RTC_WAKEUP, time.toInstant().toEpochMilli(), pending);
       else
         a.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, time.toInstant().toEpochMilli(), pending);
-    } catch (SecurityException ignored) {
+      return true;
+    } catch (SecurityException denied) {
+      // Permission can be revoked between the exact() check and the system call.
+      try {
+        a.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP,time.toInstant().toEpochMilli(),pending);
+        AlertStatus.set(c,"alarm","approximate");
+        return true;
+      } catch(RuntimeException failure) {
+        AlertStatus.set(c,"alarm","schedule_failed");
+        return false;
+      }
     }
   }
 
@@ -108,8 +118,21 @@ public final class ReminderScheduler {
   }
 
   public static boolean current(Context c, Intent i) {
-    return new UserStore(c).text("alarm_generation", "").equals(i.getStringExtra("generation"))
+    long when=i.getLongExtra("when",Long.MAX_VALUE),now=System.currentTimeMillis();
+    return generation(c).equals(i.getStringExtra("generation"))
         && new AppPreferences(c).zone().code.equals(i.getStringExtra("zone"))
-        && i.getLongExtra("when", Long.MAX_VALUE) <= System.currentTimeMillis() + 1000;
+        && when<=now+1000 && when>=now-5*60_000L;
+  }
+
+  /** Stable across routine refresh/process startup; changes invalidate edited/deleted alarms. */
+  public static String generation(Context c) {
+    StringBuilder plan=new StringBuilder(new AppPreferences(c).zone().code);
+    for(int i:PrayerDay.OBLIGATORY)plan.append('|').append(i).append(':').append(PrayerMode.get(c,i).name());
+    List<PrayerRelativeReminder> tasks=new ArrayList<>(new TaskStore(c).safeLoad());
+    tasks.sort(Comparator.comparing(t->t.id));
+    for(PrayerRelativeReminder t:tasks)plan.append('|').append(t.id).append(':').append(t.title)
+        .append(':').append(t.anchor).append(':').append(t.offsetMinutes).append(':')
+        .append(new TreeSet<>(t.weekdays)).append(':').append(t.enabled);
+    return UUID.nameUUIDFromBytes(plan.toString().getBytes(java.nio.charset.StandardCharsets.UTF_8)).toString();
   }
 }

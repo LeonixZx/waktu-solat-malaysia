@@ -1,6 +1,10 @@
-# Waktu Solat Malaysia · Android 3.3.3 / PWA 3.1.0
+# Waktu Solat Malaysia · Android 3.3.4 / PWA 3.1.0
 
 Native Android and a responsive, installable web app share an original ivory/gold identity, published religious content and portable local data. Development application ID remains `com.example.waktusolatmalaysia` so upgrades retain the existing app's data and the reference publisher's app stays separate.
+
+Public source: **[LeonixZx/waktu-solat-malaysia](https://github.com/LeonixZx/waktu-solat-malaysia)**. Download APKs from **[Releases](https://github.com/LeonixZx/waktu-solat-malaysia/releases)**. To restore/edit on another computer, follow **[Clone and build](CLONE_AND_BUILD.md)**. Project-authored code is GPLv3; third-party content retains its own terms—see [NOTICE.md](NOTICE.md) and [ASSET_PROVENANCE.md](ASSET_PROVENANCE.md).
+
+Android 3.3.4 keeps alarm identities stable across routine refresh/process startup, makes playback failures visible, adds notification/5-second adhan tests in the schedule screen, and uses our arch/crescent/clock notification icon plus colour logo. Exact alarm permission, notification permission, alarm volume and channel status are shown directly. See [VERIFICATION_V334.md](VERIFICATION_V334.md). Your modes and placed widgets remain intact.
 
 Android 3.3.3 pairs Gregorian and JAKIM-supplied Hijri dates on Today's prayers (Timeline) and improves Hijri labels on Daily Plus (both styles). Compact date metadata keeps the curved phone layout intact. See [DESIGN_V333.md](DESIGN_V333.md) and [VERIFICATION_V333.md](VERIFICATION_V333.md). Version 3.3.2 fixed actual-size widget previews; version 3.3.1 introduced Timeline widgets. Saved layout/zone/theme preferences remain intact. Previous APKs and the [verified v3.3.0 recovery checkpoint](RESTORE_V330.md) remain available. Original generated imagery and [prompts](design/brand-v322/prompts.json) are retained.
 

@@ -1,0 +1,8 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android" android:width="24dp" android:height="24dp" android:viewportWidth="320" android:viewportHeight="320">
+    <!-- Monochrome arch/crescent/clock, adapted from our own brand master for status-bar masking. -->
+    <group android:translateX="-96" android:translateY="-110">
+        <path android:pathData="M128,394 L128,252 A128,128 0,0 1,384 252 L384,394" android:strokeColor="#FFFFFFFF" android:fillColor="#00000000" android:strokeWidth="28" android:strokeLineCap="round" android:strokeLineJoin="round"/>
+        <path android:pathData="M298,188 A91,91 0,1 0,341 337 A102,102 0,0 1,298 188 Z" android:fillColor="#FFFFFFFF"/>
+        <path android:pathData="M253,260 L253,306 L291,328" android:strokeColor="#FFFFFFFF" android:fillColor="#00000000" android:strokeWidth="16" android:strokeLineCap="round" android:strokeLineJoin="round"/>
+    </group>
+</vector>

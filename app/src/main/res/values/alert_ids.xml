@@ -1,0 +1,6 @@
+<resources>
+    <item name="alert_health" type="id"/><item name="alert_test_notification" type="id"/>
+    <item name="alert_test_azan" type="id"/><item name="alert_stop_azan" type="id"/>
+    <item name="alert_notification_settings" type="id"/><item name="alert_exact_settings" type="id"/>
+    <item name="alert_sound_settings" type="id"/>
+</resources>

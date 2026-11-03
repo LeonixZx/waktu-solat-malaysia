@@ -30,42 +30,26 @@ public final class PrayerAlarmReceiver extends BroadcastReceiver {
     if (store.text(delivered, "").equals(key)) return;
     store.set(delivered, key);
     PrayerMode mode = PrayerMode.get(c, index);
-    NotificationManager manager = c.getSystemService(NotificationManager.class);
-    String channel = mode == PrayerMode.AZAN ? "prayer_azan_alerts" : "prayer_reminders";
-    if (Build.VERSION.SDK_INT >= 26) {
-      NotificationChannel ch =
-          new NotificationChannel(
-              channel,
-              I18n.choose(c, "Peringatan solat", "Prayer reminders"),
-              NotificationManager.IMPORTANCE_HIGH);
-      if (mode == PrayerMode.AZAN) ch.setSound(null, null);
-      manager.createNotificationChannel(ch);
-    }
-    PendingIntent open =
-        PendingIntent.getActivity(
-            c,
-            0,
-            new Intent(c, MainActivity.class),
-            PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
-    if (Build.VERSION.SDK_INT < 33
-        || ContextCompat.checkSelfPermission(c, Manifest.permission.POST_NOTIFICATIONS)
-            == PackageManager.PERMISSION_GRANTED) {
-      NotificationManagerCompat.from(c)
-          .notify(
-              100 + index,
-              new NotificationCompat.Builder(c, channel)
-                  .setSmallIcon(R.drawable.ic_bell)
-                  .setContentTitle(I18n.choose(c, "Waktu ", "Time for ") + I18n.prayer(c, index))
-                  .setContentText(new AppPreferences(c).zone().name)
-                  .setContentIntent(open)
-                  .setAutoCancel(true)
-                  .build());
-      if (mode == PrayerMode.AZAN)
-        try {
-          ContextCompat.startForegroundService(
-              c, new Intent(c, AzanPlaybackService.class).putExtra("index", index));
-        } catch (RuntimeException ignored) {
-        }
+    PrayerNotifications.channels(c);
+    String channel = mode == PrayerMode.AZAN ? PrayerNotifications.AZAN : PrayerNotifications.PRAYER;
+    if (PrayerNotifications.allowed(c,channel)) {
+      NotificationCompat.Builder alert=PrayerNotifications.builder(c,channel)
+          .setContentTitle(I18n.choose(c,"Waktu ","Time for ")+I18n.prayer(c,index))
+          .setContentText(new AppPreferences(c).zone().name)
+          .setContentIntent(PrayerNotifications.open(c)).setAutoCancel(true);
+      if(mode==PrayerMode.AZAN)alert.addAction(R.drawable.ic_play,
+          I18n.choose(c,"Mainkan azan","Play adhan"),PrayerNotifications.play(c,index));
+      try {
+        NotificationManagerCompat.from(c).notify(100+index,alert.build());
+        AlertStatus.set(c,"notification","posted");
+      }catch(SecurityException denied){AlertStatus.set(c,"notification","blocked");}
+    }else AlertStatus.set(c,"notification","blocked");
+    if(mode==PrayerMode.AZAN)try {
+      ContextCompat.startForegroundService(c,new Intent(c,AzanPlaybackService.class)
+          .setAction("alarm").putExtra("index",index));
+    }catch(RuntimeException denied){
+      AlertStatus.set(c,"azan","background_start_blocked");
+      android.util.Log.w("PrayerAlerts","Adhan start blocked",denied);
     }
     PendingResult result = goAsync();
     new Thread(

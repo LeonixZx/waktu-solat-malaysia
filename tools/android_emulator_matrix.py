@@ -129,6 +129,8 @@ def run_profile(key, suite, port, gpu):
             '-no-window', '-no-audio', '-no-boot-anim', '-no-snapshot-load', '-no-snapshot-save',
             '-gpu', gpu], stdout=out, stderr=err, env=ENV, startupinfo=start)
         animation_before = {}
+        alert_permission_before = None
+        exact_mode_before = None
         try:
             deadline = time.monotonic() + 240
             while True:
@@ -152,20 +154,47 @@ def run_profile(key, suite, port, gpu):
                 assert path.exists(), 'Build the app/test APKs first'
                 assert 'Success' in adb(serial, 'install', '-r', path, timeout=120)
             app = CONFIG['applicationId']
+            if suite == 'alerts':
+                package=adb(serial,'shell','dumpsys','package',app)
+                alert_permission_before='android.permission.POST_NOTIFICATIONS: granted=true' in package
+                if profile['api']>=33 and not alert_permission_before:
+                    adb(serial,'shell','pm','grant',app,'android.permission.POST_NOTIFICATIONS')
+                if profile['api']>=31:
+                    previous=adb(serial,'shell','appops','get',app,'SCHEDULE_EXACT_ALARM',check=False)
+                    mode=re.search(r'SCHEDULE_EXACT_ALARM: (allow|deny|ignore|default|foreground)',previous)
+                    exact_mode_before=mode[1] if mode else 'default'
+                    adb(serial,'shell','appops','set',app,'SCHEDULE_EXACT_ALARM','allow')
             if suite in ('full', 'timeline', 'preview'): adb(serial, 'shell', 'appwidget', 'grantbind', '--package', app, '--user', '0')
             adb(serial, 'logcat', '-c')
-            classes = ['com.example.waktusolatmalaysia.WidgetDatesV333Test'] if suite == 'dates' else ['com.example.waktusolatmalaysia.WidgetPreviewV332Test'] if suite == 'preview' else ['com.example.waktusolatmalaysia.WidgetTimelineV331Test'] if suite == 'timeline' else ['com.example.waktusolatmalaysia.SystemBarAppearanceTest'] if suite == 'bars' else CONFIG['fullClasses' if suite == 'full' else 'smokeClasses']
+            classes = ['com.example.waktusolatmalaysia.PrayerAlertsV334Test','com.example.waktusolatmalaysia.AlarmDeliveryTest'] if suite == 'alerts' else ['com.example.waktusolatmalaysia.WidgetDatesV333Test'] if suite == 'dates' else ['com.example.waktusolatmalaysia.WidgetPreviewV332Test'] if suite == 'preview' else ['com.example.waktusolatmalaysia.WidgetTimelineV331Test'] if suite == 'timeline' else ['com.example.waktusolatmalaysia.SystemBarAppearanceTest'] if suite == 'bars' else CONFIG['fullClasses' if suite == 'full' else 'smokeClasses']
             result = adb(serial, 'shell', 'am', 'instrument', '-w', '-e', 'widgets', 'true',
-                         '-e', 'capture', key, '-e', 'class', ','.join(classes),
+                         '-e', 'capture', key, '-e','alarms','true','-e', 'class', ','.join(classes),
                          app + '.test/androidx.test.runner.AndroidJUnitRunner', timeout=1200)
             (evidence / f'{suite}.log').write_text(result, encoding='utf-8')
             (evidence / f'{suite}-logcat.txt').write_text(adb(serial, 'logcat', '-d', '-v', 'threadtime', timeout=60), encoding='utf-8')
             (evidence / f'{suite}-crash.txt').write_text(adb(serial, 'logcat', '-b', 'crash', '-d', timeout=60), encoding='utf-8')
-            expected = CONFIG.get('fullTestCount',18) if suite == 'full' else 3 if suite == 'preview' else 4 if suite in ('dates','timeline') else 1 if suite == 'bars' else 5
+            expected = CONFIG.get('fullTestCount',18) if suite == 'full' else 7 if suite == 'alerts' else 3 if suite == 'preview' else 4 if suite in ('dates','timeline') else 1 if suite == 'bars' else 5
             native_passed = f"OK ({expected} {'test' if expected == 1 else 'tests'})" in result
+            cold_checks=[]
+            if suite=='alerts' and native_passed:
+                for mode in ['notification','azan']:
+                    seed=adb(serial,'shell','am','instrument','-w','-e','class',app+'.ColdPrayerAlarmV334Test',
+                        '-e','mode',mode,app+'.test/androidx.test.runner.AndroidJUnitRunner',timeout=60)
+                    assert 'OK (1 test)' in seed,seed
+                    adb(serial,'shell','am','start','-a','android.intent.action.MAIN','-c','android.intent.category.HOME')
+                    adb(serial,'shell','am','kill',app)
+                    time.sleep(1)
+                    dead=not adb(serial,'shell','pidof',app,check=False).strip()
+                    assert dead,'Cold-start verification requires the process to be absent'
+                    time.sleep(24)
+                    verify=adb(serial,'shell','am','instrument','-w','-e','class',app+'.ColdPrayerAlarmV334Test',
+                        '-e','mode',mode,'-e','phase','verify',app+'.test/androidx.test.runner.AndroidJUnitRunner',timeout=60)
+                    (evidence/f'cold-{mode}.log').write_text(seed+'\n'+verify,encoding='utf-8')
+                    assert 'OK (1 test)' in verify,verify
+                    cold_checks.append({'mode':mode,'processConfirmedAbsent':dead,'delivered':True})
             healthy = health(serial,evidence,'after')
             passed = native_passed and healthy
-            for folder in ['ui-v330', 'tablet-verification', 'system-bar-check', 'widget-v331', 'widget-v332', 'widget-v333']:
+            for folder in ['ui-v330', 'tablet-verification', 'system-bar-check', 'widget-v331', 'widget-v332', 'widget-v333','alerts-v334']:
                 adb(serial, 'pull', f'/sdcard/Android/data/{app}/files/{folder}', evidence / folder, timeout=60, check=False)
             source = ROOT / 'app/build/outputs/apk/debug/app-debug.apk'
             metadata = {'profile': profile, 'suite': suite, 'passed': passed,
@@ -177,6 +206,7 @@ def run_profile(key, suite, port, gpu):
                 'reportedSize': adb(serial, 'shell', 'wm', 'size').strip(),
                 'reportedDensity': adb(serial, 'shell', 'wm', 'density').strip(),
                 'nativeAssertionsPassed': native_passed, 'systemUiHealthy': healthy,
+                'coldStartChecks':cold_checks,
                 'animationsDuringTest': 0,
                 'gpuMode': gpu,
                 'wipeDataRequested': False, 'physicalDeviceTouched': False}
@@ -192,6 +222,12 @@ def run_profile(key, suite, port, gpu):
                 (evidence / name).write_text(json.dumps(current, indent=2) + '\n', encoding='utf-8')
             raise
         finally:
+            if alert_permission_before is False and profile['api']>=33:
+                try: adb(serial,'shell','pm','revoke',CONFIG['applicationId'],'android.permission.POST_NOTIFICATIONS',check=False,timeout=10)
+                except subprocess.TimeoutExpired: pass
+            if exact_mode_before is not None:
+                try: adb(serial,'shell','appops','set',CONFIG['applicationId'],'SCHEDULE_EXACT_ALARM',exact_mode_before,check=False,timeout=10)
+                except subprocess.TimeoutExpired: pass
             for setting,value in animation_before.items():
                 try:
                     adb(serial,'shell','settings','delete','global',setting,check=False,timeout=10) if value=='null' else adb(serial,'shell','settings','put','global',setting,value,check=False,timeout=10)
@@ -213,7 +249,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('action', choices=['create', 'run'])
     parser.add_argument('--profiles', nargs='+', choices=CONFIG['profiles'], default=list(CONFIG['profiles']))
-    parser.add_argument('--suite', choices=['smoke', 'full', 'bars', 'timeline', 'preview', 'dates'], default='smoke')
+    parser.add_argument('--suite', choices=['smoke', 'full', 'bars', 'timeline', 'preview', 'dates','alerts'], default='smoke')
     parser.add_argument('--port', type=int, default=5560)
     parser.add_argument('--gpu', choices=['auto', 'host', 'software', 'swiftshader', 'swiftshader_indirect', 'swangle'], default=None)
     args = parser.parse_args()

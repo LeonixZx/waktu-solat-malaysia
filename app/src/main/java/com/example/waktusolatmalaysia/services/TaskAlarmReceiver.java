@@ -26,28 +26,19 @@ public final class TaskAlarmReceiver extends BroadcastReceiver {
     UserStore s = new UserStore(c);
     if (s.text("delivered_task_" + id, "").equals(anchor)) return;
     s.set("delivered_task_" + id, anchor);
-    if (Build.VERSION.SDK_INT >= 26)
-      c.getSystemService(NotificationManager.class)
-          .createNotificationChannel(
-              new NotificationChannel(
-                  "personal_reminders",
-                  I18n.choose(c, "Peringatan peribadi", "Personal reminders"),
-                  NotificationManager.IMPORTANCE_DEFAULT));
+    PrayerNotifications.channels(c);
     PendingIntent open =
         PendingIntent.getActivity(
             c,
             id.hashCode(),
             new Intent(c, MainActivity.class).putExtra("open_tasks", true),
             PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
-    if (Build.VERSION.SDK_INT < 33
-        || ContextCompat.checkSelfPermission(c, Manifest.permission.POST_NOTIFICATIONS)
-            == PackageManager.PERMISSION_GRANTED)
+    if (PrayerNotifications.allowed(c,PrayerNotifications.TASK))
       NotificationManagerCompat.from(c)
           .notify(
               "task:" + id,
               1,
-              new NotificationCompat.Builder(c, "personal_reminders")
-                  .setSmallIcon(R.drawable.ic_task)
+              PrayerNotifications.builder(c,PrayerNotifications.TASK)
                   .setContentTitle(task.title)
                   .setContentText(
                       new AppPreferences(c).zone().name + " · " + I18n.prayer(c, task.anchor))

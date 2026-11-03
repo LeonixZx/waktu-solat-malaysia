@@ -74,7 +74,7 @@ public final class ScheduleFragment extends FeatureFragment {
         Ui.line(
             requireContext(),
             selectedZone().name,
-            selectedZone().code + " · Tukar zon",
+            selectedZone().code + " Â· Tukar zon",
             R.drawable.ic_location,
             () -> open(R.id.locationFragment)),
         16);
@@ -86,8 +86,8 @@ public final class ScheduleFragment extends FeatureFragment {
     tabs.getTabAt(mode).select();
     Ui.add(page, tabs, 16);
     LinearLayout controls = Ui.row(requireContext());
-    MaterialButton prev = Ui.quiet(requireContext(), "‹", 0),
-        next = Ui.quiet(requireContext(), "›", 0);
+    MaterialButton prev = Ui.quiet(requireContext(), "â€¹", 0),
+        next = Ui.quiet(requireContext(), "â€º", 0);
     prev.setId(R.id.previous);
     next.setId(R.id.next);
     prev.setContentDescription("Sebelumnya");
@@ -152,49 +152,7 @@ public final class ScheduleFragment extends FeatureFragment {
             false,
             R.color.text_secondary),
         8);
-    preview = Ui.quiet(requireContext(), "Dengar contoh azan", R.drawable.ic_play);
-    preview.setOnClickListener(
-        v -> {
-          if (player != null) {
-            stopPreview();
-            return;
-          }
-          try {
-            player = MediaPlayer.create(requireContext(), R.raw.adhan_standard);
-            player.setOnCompletionListener(mp -> stopPreview());
-            player.start();
-            preview.setText("Hentikan contoh");
-          } catch (Exception e) {
-            stopPreview();
-            status.setText("Audio belum dapat dimainkan.");
-          }
-        });
-    Ui.add(page, preview, 4);
-    if (Build.VERSION.SDK_INT >= 31) {
-      MaterialButton exact = Ui.quiet(requireContext(), "Ketepatan penggera", R.drawable.ic_bell);
-      exact.setOnClickListener(
-          v -> {
-            try {
-              startActivity(
-                  new Intent(
-                      Settings.ACTION_REQUEST_SCHEDULE_EXACT_ALARM,
-                      Uri.parse("package:" + requireContext().getPackageName())));
-            } catch (ActivityNotFoundException e) {
-              status.setText("Tetapan penggera tidak tersedia pada peranti ini.");
-            }
-          });
-      Ui.add(page, exact, 8);
-    }
-    Ui.add(
-        page,
-        Ui.text(
-            requireContext(),
-            "Tanpa kebenaran penggera tepat, Android mungkin melewatkan peringatan. Penjimatan"
-                + " bateri juga boleh menjejaskan masa penghantaran.",
-            11,
-            false,
-            R.color.text_secondary),
-        8);
+    Ui.add(page, new com.example.waktusolatmalaysia.ui.ReminderDiagnostics(this), 8);
     tabs.addOnTabSelectedListener(
         new TabLayout.OnTabSelectedListener() {
           public void onTabSelected(TabLayout.Tab t) {
@@ -224,7 +182,7 @@ public final class ScheduleFragment extends FeatureFragment {
     today.setVisibility(
         date.equals(LocalDate.now(PrayerClock.MALAYSIA)) ? View.GONE : View.VISIBLE);
     rows.removeAllViews();
-    status.setText("Memuatkan jadual…");
+    status.setText("Memuatkan jadualâ€¦");
     task(
         () -> {
           LocalDate first = selectedMode == 2 ? YearMonth.from(selected).atDay(1) : selected,
@@ -325,7 +283,7 @@ public final class ScheduleFragment extends FeatureFragment {
                               requireContext(),
                               "Peringatan menggunakan zon utama aplikasi. Tukar zon utama untuk"
                                   + " mengaktifkannya di sini.",
-                              "Reminders use the app’s main zone. Change the main zone to enable"
+                              "Reminders use the appâ€™s main zone. Change the main zone to enable"
                                   + " them here."))
                       .setPositiveButton(I18n.t(requireContext(), "Tutup"), null)
                       .show());
@@ -354,7 +312,7 @@ public final class ScheduleFragment extends FeatureFragment {
       cell(row, d.format(DateTimeFormatter.ofPattern("d MMM", Locale.ENGLISH)), 100, true);
       PrayerDay day = data.days.get(d);
       for (int i : PrayerDay.OBLIGATORY)
-        cell(row, day == null ? "—" : day.times.get(i).format(time()), 83, false);
+        cell(row, day == null ? "â€”" : day.times.get(i).format(time()), 83, false);
       Ui.add(table, row, 4);
     }
     Ui.add(rows, horizontal, 0);
