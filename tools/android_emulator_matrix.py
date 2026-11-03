@@ -15,14 +15,17 @@ import xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = json.loads((ROOT / 'testing/android-emulators.json').read_text(encoding='utf-8'))
-SDK = Path(CONFIG['sdk'])
+from local_android import android_sdk
+SDK = Path(CONFIG['sdk']) if CONFIG.get('sdk') else android_sdk()
 ADB = SDK / 'platform-tools/adb.exe'
 EMULATOR = SDK / 'emulator/emulator.exe'
 MANAGER = SDK / 'cmdline-tools/cmdline-tools/bin/avdmanager.bat'
 AVDS = Path(os.environ['USERPROFILE']) / '.android/avd'
 QA = ROOT / 'app/build/verification/emulator-matrix'
 QA.mkdir(parents=True, exist_ok=True)
-ENV = dict(os.environ, JAVA_HOME=CONFIG['jdk'])
+ENV = dict(os.environ)
+if CONFIG.get('jdk'): ENV['JAVA_HOME']=CONFIG['jdk']
+if not ENV.get('JAVA_HOME'): raise RuntimeError('Set JAVA_HOME to your JDK21 installation')
 
 
 def command(args, *, timeout=60, check=True, input=None):

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "sdk": "C:/Users/USER/AppData/Local/Android/Sdk",
-  "jdk": "C:/Program Files/Microsoft/jdk-21.0.12.101-hotspot",
+  "sdk": "",
+  "jdk": "",
   "applicationId": "com.example.waktusolatmalaysia",
   "profiles": {
     "small_phone": {

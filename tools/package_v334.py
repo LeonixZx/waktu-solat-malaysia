@@ -37,7 +37,7 @@ clone=json.loads(read(ROOT/'app/build/verification/github-clone/verification.jso
 assert clone['androidBuildPassed']and clone['publicCloneWithoutCredentials']and clone['web']['passed']
 for n in ['VERIFICATION_V334.md','CLONE_AND_BUILD.md','GITHUB_BACKUP_VERIFICATION.md','NOTICE.md','LICENSE']:
     shutil.copy2(ROOT/n,REVIEW/n)
-shutil.copy2(ROOT/'app/build/verification/v334-phone/alerts-v334/phone-prayer-notification.png',REVIEW/'phone-prayer-notification.png')
+# Real-device screenshots are private; do not include them in public releases.
 # Public summaries omit serial numbers, private screenshots, preference contents and schedule zones.
 public_phone={'api':36,'model':'24069PC21G','tests':2,'passed':True,'installedApkMatches':True,
     'existingPreferencesAndWidgetsRetained':True,'cachedScheduleMonthsRetained':len(phone['persistentFiles']),
@@ -68,7 +68,7 @@ with zipfile.ZipFile(source,'w',zipfile.ZIP_DEFLATED,compresslevel=6)as z:
 with zipfile.ZipFile(source)as z:assert z.testzip()is None
 artifacts.append(source)
 (REVIEW/'artifact-manifest.json').write_text(json.dumps(manifest,indent=2),encoding='utf-8')
-(REVIEW/'index.html').write_text('<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Waktu Solat Malaysia 3.3.4 verification</title><style>body{max-width:900px;margin:32px auto;padding:0 20px;font:17px system-ui;background:#fcf9f3;color:#28231e}img{max-width:100%}</style><h1>Adhan and notifications · 3.3.4</h1><p>Direct phone notification crop, excluding other notifications. Original project logo is used.</p><img src="phone-prayer-notification.png" alt="Actual branded prayer notification"><p><a href="VERIFICATION_V334.md">Device verification</a> · <a href="CLONE_AND_BUILD.md">Clone and build</a> · <a href="artifact-manifest.json">Evidence and source manifest</a></p>',encoding='utf-8')
+(REVIEW/'index.html').write_text('<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Waktu Solat Malaysia 3.3.4 verification</title><style>body{max-width:900px;margin:32px auto;padding:0 20px;font:17px system-ui;background:#fcf9f3;color:#28231e}img{max-width:100%}</style><h1>Adhan and notifications Â· 3.3.4</h1><p>Original project branding is used. Real-device captures remain private.</p><p><a href="VERIFICATION_V334.md">Device verification</a> Â· <a href="CLONE_AND_BUILD.md">Clone and build</a> Â· <a href="artifact-manifest.json">Evidence and source manifest</a></p>',encoding='utf-8')
 delivery=OUT/'Waktu-Solat-Malaysia-v3.3.4-delivery.zip';assert not delivery.exists()
 with zipfile.ZipFile(delivery,'w',zipfile.ZIP_DEFLATED,compresslevel=6)as z:
     for p in artifacts[:2]:z.write(p,p.name)

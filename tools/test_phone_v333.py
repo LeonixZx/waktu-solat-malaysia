@@ -1,11 +1,12 @@
 """Explicit-device upgrade and regression checks; no data clear, uninstall or settings overrides."""
+from local_android import adb_path
 from pathlib import Path
 import hashlib, json, subprocess, sys, tarfile
 import xml.etree.ElementTree as ET
 
 ROOT=Path(__file__).resolve().parents[1]
 QA=ROOT/'app/build/verification/v333-phone'
-ADB=r'C:/Users/USER/AppData/Local/Android/Sdk/platform-tools/adb.exe'
+ADB=str(adb_path())
 PKG='com.example.waktusolatmalaysia'
 SERIAL=sys.argv[1]
 QA.mkdir(exist_ok=True)

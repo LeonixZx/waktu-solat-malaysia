@@ -1,8 +1,9 @@
 """Real LocationManager regression on the emulator, never on the user's tablet."""
+from local_android import adb_path
 from pathlib import Path
 import subprocess,json,re,sys
 ROOT=Path(__file__).resolve().parents[1];QA=ROOT/'app/build/verification/v311'
-ADB='C:/Users/USER/AppData/Local/Android/Sdk/platform-tools/adb.exe';PKG='com.example.waktusolatmalaysia'
+ADB=str(adb_path());PKG='com.example.waktusolatmalaysia'
 def adb(*args):
     p=subprocess.run([ADB,'-s','emulator-5554',*map(str,args)],capture_output=True,check=True)
     return (p.stdout+p.stderr).decode('utf-8','replace')

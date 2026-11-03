@@ -1,11 +1,12 @@
 """Additional phone window/text checks; restores emulator display settings in finally."""
+from local_android import adb_path
 from pathlib import Path
 import subprocess
 import json
 
 ROOT=Path(__file__).resolve().parents[1]
 QA=ROOT/'app/build/verification/v330'
-ADB=r'C:/Users/USER/AppData/Local/Android/Sdk/platform-tools/adb.exe'
+ADB=str(adb_path())
 SERIAL='emulator-5554'
 
 def run(*args):

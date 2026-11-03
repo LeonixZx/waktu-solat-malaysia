@@ -1,10 +1,11 @@
 """Focused navigation/layout regression. Only emulator-5554 is resized; settings restored."""
+from local_android import adb_path
 from pathlib import Path
 import json, re, subprocess, sys
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'app/build/verification/v3'
-ADB = 'C:/Users/USER/AppData/Local/Android/Sdk/platform-tools/adb.exe'
+ADB = str(adb_path())
 SERIAL = 'emulator-5554'
 
 def adb(*args):

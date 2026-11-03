@@ -1,4 +1,5 @@
 """Capture existing launcher widgets without placing, deleting or resizing them."""
+from local_android import adb_path
 from pathlib import Path
 import io
 import re
@@ -11,11 +12,11 @@ ROOT = Path(__file__).resolve().parents[1]
 QA = ROOT / "app/build/verification/v322"
 OUT = ROOT / "deliverables/v3.2.2/screenshots"
 OUT.mkdir(parents=True, exist_ok=True)
-ADB = r"C:/Users/USER/AppData/Local/Android/Sdk/platform-tools/adb.exe"
+ADB = str(adb_path())
 
 
 def adb(*args):
-    return subprocess.run([ADB, "-s", "DEVICE_SERIAL", *args], capture_output=True, check=True).stdout
+    return subprocess.run([ADB, "-s", __import__('os').environ['WSM_DEVICE_SERIAL'], *args], capture_output=True, check=True).stdout
 
 
 def dump():

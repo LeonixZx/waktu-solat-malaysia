@@ -1,11 +1,12 @@
 """Reinstall without clearing data; test portrait rail and landscape sidebar on the owner's tablet."""
+from local_android import adb_path
 from pathlib import Path
 import json, subprocess, time, xml.etree.ElementTree as ET
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'app/build/verification/v3'
-ADB = 'C:/Users/USER/AppData/Local/Android/Sdk/platform-tools/adb.exe'
-SERIAL = 'DEVICE_SERIAL'
+ADB = str(adb_path())
+SERIAL = __import__('os').environ['WSM_DEVICE_SERIAL']
 PACKAGE = 'com.example.waktusolatmalaysia'
 
 def command(*args):

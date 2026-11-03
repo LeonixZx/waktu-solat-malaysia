@@ -7,6 +7,11 @@ on:
 permissions:
   contents: read
 jobs:
+  privacy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/privacy_audit.py
   android:
     runs-on: ubuntu-latest
     steps:

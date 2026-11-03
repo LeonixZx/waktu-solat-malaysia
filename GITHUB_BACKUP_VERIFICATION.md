@@ -15,8 +15,7 @@ published with the release. GitHub Actions repeats Android unit/lint/build and P
 checks for future commits and pull requests. A source checkout needs JDK21/SDK34 and Node.js;
 it does not need a system Gradle or the original local project directory.
 
-Confirmed: an unauthenticated public clone of commit
-`PRIVACY_REWRITTEN_SOURCE_COMMIT` built Android debug/unit/lint from a separate temporary
+Confirmed: an unauthenticated public clone of the verified source built Android debug/unit/lint from a separate temporary
 directory with JDK21 and SDK34, without the original source/build folders. All 46 Android JVM
 tests passed. In that same independent clone, `npm ci`, PWA tests and `npm run build` passed.
 The later documentation/CI fix does not change application source. The first cloud Android job
@@ -36,3 +35,5 @@ restore the compatible private debug keystore; a fresh auto-generated key will d
 Do not delete this original folder until the latest remote tag/release and the independent clone
 verification have completed. The final response and release verification report identify the
 confirmed URL and checks.
+
+Privacy cleanup rewrote the public history and replaced release archives. See `PRIVACY.md`. Re-clone after this cleanup; old public commit IDs are not the current source references. The sanitized Android source was independently rebuilt and its 46 unit tests/lint passed.

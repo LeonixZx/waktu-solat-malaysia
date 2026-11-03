@@ -1,9 +1,10 @@
 """Reversible emulator-only Ibadah matrix; never changes the owner's tablet settings."""
+from local_android import adb_path
 from pathlib import Path
 import subprocess,re,json,sys
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'app/build/verification/v31'
-ADB='C:/Users/USER/AppData/Local/Android/Sdk/platform-tools/adb.exe'
+ADB=str(adb_path())
 SERIAL='emulator-5554'
 def adb(*args):
     r=subprocess.run([ADB,'-s',SERIAL,*map(str,args)],capture_output=True,check=True)

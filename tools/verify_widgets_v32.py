@@ -1,7 +1,8 @@
 """Own-package host tests; keep existing widget IDs and personal records intact."""
+from local_android import adb_path
 from pathlib import Path
 import subprocess,sys
-ROOT=Path(__file__).resolve().parents[1];QA=ROOT/'app/build/verification/v32';ADB=r'C:/Users/USER/AppData/Local/Android/Sdk/platform-tools/adb.exe'
+ROOT=Path(__file__).resolve().parents[1];QA=ROOT/'app/build/verification/v32';ADB=str(adb_path())
 serial=sys.argv[1];label=sys.argv[2]
 def run(*args):return subprocess.run([ADB,'-s',serial,*map(str,args)],capture_output=True,text=True,encoding='utf-8',errors='replace').stdout
 for apk in ['app/build/outputs/apk/debug/app-debug.apk','app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk']:

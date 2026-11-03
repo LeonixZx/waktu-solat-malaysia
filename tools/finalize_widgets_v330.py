@@ -1,8 +1,9 @@
 """Verify current personal data/settings and isolate new launcher widgets from test fixtures."""
+from local_android import adb_path
 from pathlib import Path
 import subprocess,json,hashlib,xml.etree.ElementTree as ET,re
-ROOT=Path(__file__).resolve().parents[1];Q=ROOT/'app/build/verification/v330';ADB=r'C:/Users/USER/AppData/Local/Android/Sdk/platform-tools/adb.exe';PKG='com.example.waktusolatmalaysia'
-def run(*args):return subprocess.run([ADB,'-s','DEVICE_SERIAL',*args],capture_output=True,check=True,timeout=20).stdout
+ROOT=Path(__file__).resolve().parents[1];Q=ROOT/'app/build/verification/v330';ADB=str(adb_path());PKG='com.example.waktusolatmalaysia'
+def run(*args):return subprocess.run([ADB,'-s',__import__('os').environ['WSM_DEVICE_SERIAL'],*args],capture_output=True,check=True,timeout=20).stdout
 def prefs(raw):
  try:return {e.get('name'):(e.tag,sorted(x.text or '' for x in e) if e.tag=='set' else e.get('value',e.text)) for e in ET.fromstring(raw) if not e.get('name').startswith('scheduled_') and e.get('name') not in ['alarm_generation','prefetch_day']}
  except ET.ParseError:

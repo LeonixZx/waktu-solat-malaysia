@@ -1,8 +1,9 @@
 """Physical tablet orientation captures and semantic before/after data verification."""
+from local_android import adb_path
 from pathlib import Path
 import subprocess,json,xml.etree.ElementTree as ET,sys
 ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'app/build/verification/v31'
-ADB='C:/Users/USER/AppData/Local/Android/Sdk/platform-tools/adb.exe';SERIAL='DEVICE_SERIAL';PKG='com.example.waktusolatmalaysia'
+ADB=str(adb_path());SERIAL=__import__('os').environ['WSM_DEVICE_SERIAL'];PKG='com.example.waktusolatmalaysia'
 def raw(*args):return subprocess.run([ADB,'-s',SERIAL,*map(str,args)],capture_output=True,check=True).stdout
 def adb(*args):return raw(*args).decode('utf-8','replace')
 def prefs(data):

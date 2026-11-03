@@ -1,8 +1,9 @@
 """Reversible emulator checks. All ADB commands require an explicit serial."""
+from local_android import adb_path
 from pathlib import Path
 import subprocess,sys,json
 ROOT=Path(__file__).resolve().parents[1]
-ADB=Path('C:/Users/USER/AppData/Local/Android/Sdk/platform-tools/adb.exe')
+ADB=Path(str(adb_path()))
 SERIAL='emulator-5554'
 OUT=ROOT/'app/build/verification/v3';OUT.mkdir(parents=True,exist_ok=True)
 def adb(*args):

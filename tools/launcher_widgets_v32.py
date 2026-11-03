@@ -1,8 +1,9 @@
 """Place our remaining providers through the Xiaomi picker; never touch other providers."""
+from local_android import adb_path
 from pathlib import Path
 import subprocess,xml.etree.ElementTree as ET,re,time,traceback
-ADB=r'C:/Users/USER/AppData/Local/Android/Sdk/platform-tools/adb.exe';QA=Path(__file__).resolve().parents[1]/'app/build/verification/v32'
-def run(*a):return subprocess.run([ADB,'-s','DEVICE_SERIAL',*a],capture_output=True).stdout
+ADB=str(adb_path());QA=Path(__file__).resolve().parents[1]/'app/build/verification/v32'
+def run(*a):return subprocess.run([ADB,'-s',__import__('os').environ['WSM_DEVICE_SERIAL'],*a],capture_output=True).stdout
 def dump():
  out=run('shell','uiautomator','dump','/sdcard/v32-ui.xml');assert b'dumped to' in out,out
  return ET.fromstring(run('exec-out','cat','/sdcard/v32-ui.xml'))

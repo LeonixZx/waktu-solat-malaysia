@@ -1,9 +1,10 @@
 """Emulator-only widget, split-window and permission checks, restoring settings in finally."""
+from local_android import adb_path
 from pathlib import Path
 import json,re,subprocess
 ROOT=Path(__file__).resolve().parents[1]
 QA=ROOT/'app/build/verification/v31'
-ADB='C:/Users/USER/AppData/Local/Android/Sdk/platform-tools/adb.exe'
+ADB=str(adb_path())
 PKG='com.example.waktusolatmalaysia'
 def adb(*args):
     p=subprocess.run([ADB,'-s','emulator-5554',*map(str,args)],capture_output=True,check=True)

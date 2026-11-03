@@ -1,4 +1,5 @@
 """Capture upgrade baseline and copy original generated artwork into the project."""
+from local_android import adb_path
 from pathlib import Path
 import json
 import shutil
@@ -7,12 +8,12 @@ import subprocess
 ROOT = Path(__file__).resolve().parents[1]
 QA = ROOT / "app/build/verification/v330"
 QA.mkdir(parents=True, exist_ok=True)
-ADB = r"C:/Users/USER/AppData/Local/Android/Sdk/platform-tools/adb.exe"
+ADB = str(adb_path())
 PKG = "com.example.waktusolatmalaysia"
 
 
 def adb(*args):
-    return subprocess.run([ADB, "-s", "DEVICE_SERIAL", *args], capture_output=True, check=True).stdout
+    return subprocess.run([ADB, "-s", __import__('os').environ['WSM_DEVICE_SERIAL'], *args], capture_output=True, check=True).stdout
 
 
 for name in ["waktu_solat", "personal_library", "widget_config"]:
