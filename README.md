@@ -44,13 +44,13 @@ Malay and English controls, light/dark appearances, and adaptive phone/tablet la
 
 <table>
   <tr>
-    <td align="center"><img src="docs/assets/android-home.webp" width="230" alt="Android prayer timetable in the ivory theme" /><br /><strong>Your day at a glance</strong></td>
-    <td align="center"><img src="docs/assets/android-worship.webp" width="230" alt="Android worship hub with grouped readings and tools" /><br /><strong>A place for daily worship</strong></td>
-    <td align="center"><img src="docs/assets/android-dark.webp" width="230" alt="Android prayer dashboard in the dark theme" /><br /><strong>Comfortable after dark</strong></td>
+    <td align="center"><img src="docs/assets/android-home-v2.webp" width="230" alt="Android prayer timetable in the ivory theme" /><br /><strong>Your day at a glance</strong></td>
+    <td align="center"><img src="docs/assets/android-worship-v2.webp" width="230" alt="Android worship hub with grouped readings and tools" /><br /><strong>A place for daily worship</strong></td>
+    <td align="center"><img src="docs/assets/android-dark-v2.webp" width="230" alt="Android prayer dashboard in the dark theme" /><br /><strong>Comfortable after dark</strong></td>
   </tr>
 </table>
 
-*Actual Android emulator captures using a public sample zone, not personal phone data. Dates/times illustrate the captured session. The mosque banner is original AI-generated decorative artwork.*
+*Fresh Android 14 emulator captures of v3.3.4, checked for foreground focus and ANR/crash dialogs at capture time. Public sample zone; dates/times illustrate the session. [Capture verification](docs/SCREENSHOT_VERIFICATION.md). The mosque banner is original AI-generated decorative artwork.*
 
 ### Prayer times on your home screen
 

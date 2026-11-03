@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.test.core.app.ActivityScenario;
 import androidx.test.platform.app.InstrumentationRegistry;
+import androidx.test.uiautomator.By;
+import androidx.test.uiautomator.UiDevice;
 import com.example.waktusolatmalaysia.fragments.*;
 import com.example.waktusolatmalaysia.model.*;
 import com.example.waktusolatmalaysia.preferences.AppPreferences;
@@ -68,14 +70,46 @@ public class PhoneUiV330Test {
   }
 
   private void capture(String name) throws Exception {
-    File folder = new File(context.getExternalFilesDir(null), "ui-v330");
+    UiDevice device = UiDevice.getInstance(InstrumentationRegistry.getInstrumentation());
+    assertCaptureHealthy(device);
+    String run = InstrumentationRegistry.getArguments().getString("capture_run", "");
+    assertTrue("Safe capture run ID", run.matches("[A-Za-z0-9_-]*"));
+    File folder = new File(context.getExternalFilesDir(null), "ui-v330" + (run.isEmpty() ? "" : "/" + run));
     folder.mkdirs();
     Bitmap b = InstrumentationRegistry.getInstrumentation().getUiAutomation().takeScreenshot();
     assertNotNull(b);
+    assertCaptureHealthy(device);
     try (FileOutputStream out = new FileOutputStream(new File(folder, name + ".png"))) {
       b.compress(Bitmap.CompressFormat.PNG, 100, out);
     }
     b.recycle();
+  }
+
+  private void assertCaptureHealthy(UiDevice device) {
+    assertFalse("Refuse a screenshot containing an Android ANR/crash dialog",
+        device.hasObject(By.res("android", "aerr_close"))
+            || device.hasObject(By.res("android", "aerr_wait"))
+            || device.hasObject(By.textContains("isn't responding"))
+            || device.hasObject(By.textContains("keeps stopping")));
+    assertEquals("Capture requires our app in the foreground, without a system overlay",
+        context.getPackageName(), device.getCurrentPackageName());
+  }
+
+  private void tapHub(ActivityScenario<MainActivity> scenario, int route) {
+    int[] point = new int[2];
+    scenario.onActivity(a -> {
+      View target = a.findViewById(R.id.bottom_nav).findViewById(route);
+      assertNotNull(target);
+      assertTrue(target.isShown());
+      target.getLocationOnScreen(point);
+      point[0] += target.getWidth() / 2;
+      point[1] += target.getHeight() / 2;
+    });
+    assertTrue(UiDevice.getInstance(InstrumentationRegistry.getInstrumentation()).click(point[0], point[1]));
+    idle();
+    scenario.onActivity(a -> assertEquals("Real navigation tap was handled", route,
+        ((NavHostFragment) a.getSupportFragmentManager().findFragmentById(R.id.nav_host))
+            .getNavController().getCurrentDestination().getId()));
   }
 
   private void textFits(View root) {
@@ -184,6 +218,12 @@ public class PhoneUiV330Test {
 
   @Test
   public void screenshotAffectedHubsInBothThemesAndRetainFilters() throws Exception {
+    // Explicit public sample configuration; restored by @After.
+    context.getSharedPreferences("waktu_solat", 0).edit()
+        .putString("zone_state", "Wilayah Persekutuan")
+        .putString("zone_name", "Kuala Lumpur, Putrajaya")
+        .putString("zone_code", "WLY01")
+        .putString("language", "ms").putBoolean("twelve_hour", false).commit();
     for (String theme : new String[] {"light", "dark"}) {
       new AppPreferences(context).setTheme(theme);
       InstrumentationRegistry.getInstrumentation()
@@ -214,7 +254,8 @@ public class PhoneUiV330Test {
         capture(theme + "-shortcuts");
         for (int route :
             new int[] {R.id.worshipFragment, R.id.collectionFragment, R.id.exploreFragment}) {
-          s.onActivity(a -> a.openDestination(route, null));
+          if (route == R.id.worshipFragment || route == R.id.exploreFragment) tapHub(s, route);
+          else s.onActivity(a -> a.openDestination(route, null));
           idle();
           capture(
               theme

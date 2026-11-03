@@ -48,7 +48,7 @@ jobs:
       - name: Install required SDK
         run: sdkmanager 'platforms;android-34' 'build-tools;34.0.0'
       - name: Build and check Android
-        run: ./gradlew assembleDebug testDebugUnitTest lintDebug
+        run: ./gradlew assembleDebug assembleDebugAndroidTest testDebugUnitTest lintDebug
       - name: Checksum the installable development APK
         working-directory: app/build/outputs/apk/debug
         run: sha256sum app-debug.apk > SHA256SUMS.txt

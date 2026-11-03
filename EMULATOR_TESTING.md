@@ -1,5 +1,20 @@
 # Android emulator test workflow
 
+## Screenshot provenance and ANR rejection
+
+Each new runner execution stores evidence under `app/build/verification/emulator-matrix/<profile>/runs/<run-id>/`.
+The profile-level result JSON points to that exact directory. Phone UI screenshots also use a run-specific
+directory on the emulator, so an ADB pull cannot mix old flat captures with newer nested captures.
+Do not select screenshots from the older shared `ui-v330/` folder.
+
+`PhoneUiV330Test` rejects Android ANR/crash dialog resource IDs and error text before/after screenshot
+capture, and requires the app to be foreground. Its worship/Explore navigation uses real injected taps
+and checks the resulting route. Runner start/end health checks are supplementary: a clean final screen
+alone does not prove earlier frames were healthy. New runs also retain the events buffer and fail on
+app/System UI ANR or crash events during execution.
+
+Screenshots must still be inspected visually before publication. See [the README screenshot correction](docs/SCREENSHOT_VERIFICATION.md).
+
 Dedicated Waktu Solat Malaysia AVDs are configured in `testing/android-emulators.json`. The emulator runner only targets `emulator-*` serials and verifies their AVD identity before installing or testing. It does not target the USB tablet, clear app data, wipe AVD data, force-overwrite existing AVDs or modify another project's emulator.
 
 | Profile | AVD | Android/API | Native display | Available width |

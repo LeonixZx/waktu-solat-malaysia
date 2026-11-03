@@ -22,6 +22,11 @@ This review did not change Android/PWA runtime code, package/version, personal-d
 
 ## Evidence and boundaries
 
+**Screenshot correction:** the initial README mistakenly selected two stale captures containing a
+System UI ANR dialog. Those were unsuitable for publication despite later runs passing. Fresh guarded
+captures replace them; see [SCREENSHOT_VERIFICATION.md](SCREENSHOT_VERIFICATION.md). The original
+post-run health check did not validate the selected old frames.
+
 - Reachable-history Gitleaks scan passed. Its original 12 findings were reviewed: SHA-256 source-file
   checksums in the two recovery manifests, not credentials. Only matching checksum rows are allowlisted.
 - Reviewed source/index scans passed; no known owner profile paths, hardcoded USB identifiers,

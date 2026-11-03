@@ -9,6 +9,7 @@ import hashlib
 import json
 import os
 import re
+import shutil
 import subprocess
 import time
 import xml.etree.ElementTree as ET
@@ -116,13 +117,20 @@ def run_profile(key, suite, port, gpu):
     serial = f'emulator-{port}'
     devices = command([ADB, 'devices'])
     assert serial not in devices, f'Port already in use: {serial}'
-    evidence = QA / key
-    evidence.mkdir(exist_ok=True)
+    profile_evidence = QA / key
+    profile_evidence.mkdir(exist_ok=True)
+    run_id = datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ') + '-' + suite
+    evidence = profile_evidence / 'runs' / run_id
+    evidence.mkdir(parents=True, exist_ok=False)
     started = datetime.now(timezone.utc).isoformat()
     initial = {'profile': profile, 'suite': suite, 'passed': False,
-               'status': 'running', 'startedAt': started, 'physicalDeviceTouched': False}
+               'status': 'running', 'startedAt': started, 'physicalDeviceTouched': False,
+               'evidenceDirectory': evidence.relative_to(ROOT).as_posix()}
     for name in ['result.json', f'{suite}-result.json']:
+        previous = profile_evidence / name
+        if previous.exists(): shutil.copy2(previous, evidence / ('previous-' + name))
         (evidence / name).write_text(json.dumps(initial, indent=2) + '\n', encoding='utf-8')
+        (profile_evidence / name).write_text(json.dumps(initial, indent=2) + '\n', encoding='utf-8')
     # Hide both the emulator and Windows helper process. Keep no task-specific global settings.
     start = subprocess.STARTUPINFO()
     start.dwFlags |= subprocess.STARTF_USESHOWWINDOW
@@ -168,14 +176,19 @@ def run_profile(key, suite, port, gpu):
                     exact_mode_before=mode[1] if mode else 'default'
                     adb(serial,'shell','appops','set',app,'SCHEDULE_EXACT_ALARM','allow')
             if suite in ('full', 'timeline', 'preview'): adb(serial, 'shell', 'appwidget', 'grantbind', '--package', app, '--user', '0')
-            adb(serial, 'logcat', '-c')
+            adb(serial, 'logcat', '-b', 'all', '-c')
             classes = ['com.example.waktusolatmalaysia.PrayerAlertsV334Test','com.example.waktusolatmalaysia.AlarmDeliveryTest'] if suite == 'alerts' else ['com.example.waktusolatmalaysia.WidgetDatesV333Test'] if suite == 'dates' else ['com.example.waktusolatmalaysia.WidgetPreviewV332Test'] if suite == 'preview' else ['com.example.waktusolatmalaysia.WidgetTimelineV331Test'] if suite == 'timeline' else ['com.example.waktusolatmalaysia.SystemBarAppearanceTest'] if suite == 'bars' else CONFIG['fullClasses' if suite == 'full' else 'smokeClasses']
             result = adb(serial, 'shell', 'am', 'instrument', '-w', '-e', 'widgets', 'true',
-                         '-e', 'capture', key, '-e','alarms','true','-e', 'class', ','.join(classes),
+                         '-e', 'capture', key, '-e','capture_run',run_id,'-e','alarms','true','-e', 'class', ','.join(classes),
                          app + '.test/androidx.test.runner.AndroidJUnitRunner', timeout=1200)
             (evidence / f'{suite}.log').write_text(result, encoding='utf-8')
             (evidence / f'{suite}-logcat.txt').write_text(adb(serial, 'logcat', '-d', '-v', 'threadtime', timeout=60), encoding='utf-8')
             (evidence / f'{suite}-crash.txt').write_text(adb(serial, 'logcat', '-b', 'crash', '-d', timeout=60), encoding='utf-8')
+            events = adb(serial, 'logcat', '-b', 'events', '-d', '-v', 'threadtime', timeout=60)
+            (evidence / f'{suite}-events.txt').write_text(events, encoding='utf-8')
+            process_errors = [line for line in events.splitlines()
+                if re.search(r'\bam_(?:anr|crash)\b', line)
+                and (app in line or 'com.android.systemui' in line)]
             expected = CONFIG.get('fullTestCount',18) if suite == 'full' else 7 if suite == 'alerts' else 3 if suite == 'preview' else 4 if suite in ('dates','timeline') else 1 if suite == 'bars' else 5
             native_passed = f"OK ({expected} {'test' if expected == 1 else 'tests'})" in result
             cold_checks=[]
@@ -196,12 +209,18 @@ def run_profile(key, suite, port, gpu):
                     assert 'OK (1 test)' in verify,verify
                     cold_checks.append({'mode':mode,'processConfirmedAbsent':dead,'delivered':True})
             healthy = health(serial,evidence,'after')
-            passed = native_passed and healthy
+            passed = native_passed and healthy and not process_errors
             for folder in ['ui-v330', 'tablet-verification', 'system-bar-check', 'widget-v331', 'widget-v332', 'widget-v333','alerts-v334']:
-                adb(serial, 'pull', f'/sdcard/Android/data/{app}/files/{folder}', evidence / folder, timeout=60, check=False)
+                source_folder = folder + ('/' + run_id if folder == 'ui-v330' else '')
+                # A fresh host destination prevents adb pull nesting/stale screenshot selection.
+                assert not (evidence / folder).exists()
+                adb(serial, 'pull', f'/sdcard/Android/data/{app}/files/{source_folder}', evidence / folder, timeout=60, check=False)
             source = ROOT / 'app/build/outputs/apk/debug/app-debug.apk'
             metadata = {'profile': profile, 'suite': suite, 'passed': passed,
                 'status': 'completed', 'startedAt': started,
+                'evidenceDirectory': evidence.relative_to(ROOT).as_posix(),
+                'captureRun': run_id,
+                'phoneScreenshotsGuardedAtCapture': suite in ('smoke','full'),
                 'completedAt': datetime.now(timezone.utc).isoformat(),
                 'tests': expected, 'apkSha256': hashlib.sha256(source.read_bytes()).hexdigest(),
                 'testApkSha256': hashlib.sha256((ROOT / 'app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk').read_bytes()).hexdigest(),
@@ -209,12 +228,15 @@ def run_profile(key, suite, port, gpu):
                 'reportedSize': adb(serial, 'shell', 'wm', 'size').strip(),
                 'reportedDensity': adb(serial, 'shell', 'wm', 'density').strip(),
                 'nativeAssertionsPassed': native_passed, 'systemUiHealthy': healthy,
+                'appOrSystemUiErrorEvents': len(process_errors),
                 'coldStartChecks':cold_checks,
                 'animationsDuringTest': 0,
                 'gpuMode': gpu,
                 'wipeDataRequested': False, 'physicalDeviceTouched': False}
             (evidence / 'result.json').write_text(json.dumps(metadata, indent=2) + '\n', encoding='utf-8')
             (evidence / f'{suite}-result.json').write_text(json.dumps(metadata, indent=2) + '\n', encoding='utf-8')
+            for name in ['result.json', f'{suite}-result.json']:
+                (profile_evidence / name).write_text(json.dumps(metadata, indent=2) + '\n', encoding='utf-8')
             print(key + ': ' + result[-500:], flush=True)
             assert passed, f'Test failure: {key}; see {evidence}'
         except Exception as error:
@@ -223,6 +245,7 @@ def run_profile(key, suite, port, gpu):
                            completedAt=datetime.now(timezone.utc).isoformat())
             for name in ['result.json', f'{suite}-result.json']:
                 (evidence / name).write_text(json.dumps(current, indent=2) + '\n', encoding='utf-8')
+                (profile_evidence / name).write_text(json.dumps(current, indent=2) + '\n', encoding='utf-8')
             raise
         finally:
             if alert_permission_before is False and profile['api']>=33:

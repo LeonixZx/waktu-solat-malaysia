@@ -13,12 +13,37 @@
     "quality": 83
   },
   "screenshots": {
-    "source": "actual Android standard-phone emulator UI verification captures",
-    "fixture": "public Kuala Lumpur sample zone; capture date shown",
-    "exports": [
-      "docs/assets/android-home.webp",
-      "docs/assets/android-worship.webp",
-      "docs/assets/android-dark.webp"
+    "source": "Fresh API34 native emulator screenshots, 3 November 2026",
+    "captureRun": "20261103T120521429875Z-smoke",
+    "appVersion": "3.3.4/code 15",
+    "apkSha256": "31742a4184f3caa44c67673ac2474f31e58799410c26d20655d20a0f03f60b16",
+    "tests": 5,
+    "nativeAssertionsPassed": true,
+    "systemUiHealthyBeforeAndAfter": true,
+    "anrCrashDialogAndForegroundChecksAtCapture": true,
+    "fixture": "public Kuala Lumpur/Putrajaya sample zone; original on-screen text preserved",
+    "assets": [
+      {
+        "sourceCapture": "light-home.png",
+        "sourceSha256": "d28e93efef66dd1c2c72f9d645f418595923692d634476d7d327eaaff67e881d",
+        "export": "docs/assets/android-home-v2.webp",
+        "exportSha256": "d08d3158bcb4e7d39194af18f299504d3c7f7a1064c56ef201349e25f8cb3d2e",
+        "bytes": 34700
+      },
+      {
+        "sourceCapture": "light-worship.png",
+        "sourceSha256": "90349d80178f60700a9e43b1a95c80204387c80e5e340a98e3cc7944034b52e9",
+        "export": "docs/assets/android-worship-v2.webp",
+        "exportSha256": "5d7d40558ef6144794f351b08a699aefe25732052a7954db56095462556a587a",
+        "bytes": 22572
+      },
+      {
+        "sourceCapture": "dark-home.png",
+        "sourceSha256": "fa4aa4fcf604a919b5115b3bc98c94bf11cdbac178bcf3d9bd510eec03d05abf",
+        "export": "docs/assets/android-dark-v2.webp",
+        "exportSha256": "4cc9a84baa29d3bfc985daf5010997b55089fe677b3721f8ff642cf1557cd39e",
+        "bytes": 32560
+      }
     ]
   }
 }

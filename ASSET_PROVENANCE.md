@@ -7,10 +7,13 @@ input. Its exact prompt/mode and export records are in `design/assets/readme-art
 The original is `design/assets/originals/readme-mosque-v1.png`; the 1600px WebP derivative is
 `docs/assets/readme-mosque.webp` (about 64KB). This is decorative art, not an app screenshot.
 
-`docs/assets/android-{home,worship,dark}.webp` are resized/encoded actual Android emulator captures
-from the existing native UI verification session. They use the public Kuala Lumpur fixture and
-contain no personal phone data. No UI was generated or painted into these captures. Each is under
-35KB. Current native widget fixtures remain in `design/widgets-v333/`.
+`docs/assets/android-{home,worship,dark}-v2.webp` are resized/encoded fresh Android 14 emulator
+captures of the preserved v3.3.4 APK, checked for foreground focus and Android error dialogs at
+capture time. They replace an initial selection that mistakenly included stale System UI ANR
+frames. See `docs/SCREENSHOT_VERIFICATION.md` for the correction and testing boundaries.
+They use the public Kuala Lumpur fixture and contain no personal phone data. No UI was generated,
+painted, or removed from these captures. Each is under 35KB. Current native widget fixtures remain
+in `design/widgets-v333/`.
 
 Superseded widget preview masters, the logo's first draft and old v2 diagnostic source were archived
 locally during public-repository cleanup. Their historical paths below describe earlier evidence,
