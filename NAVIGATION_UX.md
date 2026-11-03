@@ -1,6 +1,6 @@
 # Navigation cleanup · 3.0.2
 
-This records the earlier navigation repair. v3.1 retains this single-menu behavior and adds content-area-based Ibadah/Quran readers; see [IMPLEMENTATION_V31.md](IMPLEMENTATION_V31.md) and [VERIFICATION_V31.md](VERIFICATION_V31.md) for current checks.
+This records the earlier navigation repair. v3.1 retains this single-menu behavior and adds content-area-based Ibadah/Quran readers; see [IMPLEMENTATION_V31.md](docs/history/IMPLEMENTATION_V31.md) and [VERIFICATION_V31.md](docs/history/VERIFICATION_V31.md) for current checks.
 
 The 3.0.2 follow-up corrects a selection bug: Settings, Backup and About no longer select Saved. Only the separate Settings utility is highlighted on those screens, including after activity recreation. Returning to Saved selects Saved again. Android menu selection is driven by one route mapping and permits no selected hub on utility screens; the web follows the same rule. Targeted checks cover phone, rail and sidebar selection, recreation, Back, and the live tablet in both orientations. All nine web scenarios pass.
 

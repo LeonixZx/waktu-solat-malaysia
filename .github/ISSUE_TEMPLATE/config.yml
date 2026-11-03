@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Installation and build guide
+    url: https://github.com/LeonixZx/waktu-solat-malaysia/blob/main/CLONE_AND_BUILD.md
+    about: SDK setup, APK builds and signing conflicts.
+  - name: Private vulnerability report
+    url: https://github.com/LeonixZx/waktu-solat-malaysia/security/advisories/new
+    about: Keep vulnerabilities and personal information out of public issues.

@@ -1,0 +1,24 @@
+{
+  "mode": "built-in imagegen",
+  "intent": "generate",
+  "useCase": "ads-marketing",
+  "transparentBackground": false,
+  "referenceImages": [],
+  "prompt": "Use case: ads-marketing\nAsset type: original GitHub README masthead illustration for the open-source Waktu Solat Malaysia Android prayer app.\nPrimary request: a refined, calm panoramic architectural illustration of a Malaysian-inspired mosque at dawn, evoking a quiet moment before prayer. A graceful dome and slender minarets, layered abstract arches, subtle crescent high in the sky, warm golden light and soft ivory paper-like texture. Contemporary editorial art with clean architectural silhouettes and rich but restrained detail.\nComposition: wide landscape 3:1 banner, architecture along the lower half and toward the right, generous quiet ivory sky on the left. Balanced at small GitHub display size. Flat frontal composition, no device mockups or user interface.\nColor palette: warm ivory #FCF9F3, sand, muted champagne gold, dark cocoa #3B2D21; no green. Gentle light and sophisticated contrast, tasteful rather than shiny.\nConstraints: original architecture, not an exact named building or another app's art. No people, no flags, no text, no calligraphy, no logos, no watermark. This is decorative project artwork, not an app screenshot.",
+  "original": "design/assets/originals/readme-mosque-v1.png",
+  "derivative": "docs/assets/readme-mosque.webp",
+  "export": {
+    "width": 1600,
+    "format": "WebP",
+    "quality": 83
+  },
+  "screenshots": {
+    "source": "actual Android standard-phone emulator UI verification captures",
+    "fixture": "public Kuala Lumpur sample zone; capture date shown",
+    "exports": [
+      "docs/assets/android-home.webp",
+      "docs/assets/android-worship.webp",
+      "docs/assets/android-dark.webp"
+    ]
+  }
+}

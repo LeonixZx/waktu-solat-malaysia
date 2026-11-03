@@ -1,0 +1,30 @@
+name: Bug report / Laporan pepijat
+description: Report an app, widget or build problem with redacted information.
+body:
+  - type: markdown
+    attributes:
+      value: "Use SECURITY.md's private route for vulnerabilities. Never attach private backups, device serials, exact coordinates, tokens or personal screenshots."
+  - type: input
+    id: version
+    attributes:
+      label: App or source version
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Android version and model/launcher, or OS/browser/JDK for builds. No serials.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps, actual result and expected result
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Optional redacted evidence
+      description: Screenshots/error lines using sample data.

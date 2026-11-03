@@ -1,66 +1,115 @@
-# Waktu Solat Malaysia Â· Android 3.3.4 / PWA 3.1.0
+<p align="center"><img src="app/src/main/res/drawable-nodpi/brand_mark_v322.png" width="72" alt="Waktu Solat Malaysia gold crescent and arch" /></p>
 
-Native Android and a responsive, installable web app share an original ivory/gold identity, published religious content and portable local data. Development application ID remains `com.example.waktusolatmalaysia` so upgrades retain the existing app's data and the reference publisher's app stays separate.
+<h1 align="center">Waktu Solat Malaysia</h1>
 
-Public source: **[LeonixZx/waktu-solat-malaysia](https://github.com/LeonixZx/waktu-solat-malaysia)**. Download APKs from **[Releases](https://github.com/LeonixZx/waktu-solat-malaysia/releases)**. To restore/edit on another computer, follow **[Clone and build](CLONE_AND_BUILD.md)**. Project-authored code is GPLv3; third-party content retains its own termsâ€”see [NOTICE.md](NOTICE.md) and [ASSET_PROVENANCE.md](ASSET_PROVENANCE.md).
+<p align="center"><strong>Waktu solat, bacaan dan amalan — dekat dengan kehidupan harian.</strong><br />
+A community Android app for prayer times and daily worship in Malaysia.</p>
 
-Android 3.3.4 keeps alarm identities stable across routine refresh/process startup, makes playback failures visible, adds notification/5-second adhan tests in the schedule screen, and uses our arch/crescent/clock notification icon plus colour logo. Exact alarm permission, notification permission, alarm volume and channel status are shown directly. See [VERIFICATION_V334.md](VERIFICATION_V334.md). Your modes and placed widgets remain intact.
+<p align="center">
+  <a href="https://github.com/LeonixZx/waktu-solat-malaysia/actions/workflows/build.yml"><img alt="Build and verification" src="https://github.com/LeonixZx/waktu-solat-malaysia/actions/workflows/build.yml/badge.svg" /></a>
+  <a href="LICENSE"><img alt="Project code: GPL v3" src="https://img.shields.io/badge/code-GPL_v3-8A581C" /></a>
+  <img alt="Android 7.0 and newer" src="https://img.shields.io/badge/Android-7.0%2B-4C443B" />
+  <img alt="Malay and English interface" src="https://img.shields.io/badge/languages-BM_%2F_EN-8A581C" />
+</p>
 
-Android 3.3.3 pairs Gregorian and JAKIM-supplied Hijri dates on Today's prayers (Timeline) and improves Hijri labels on Daily Plus (both styles). Compact date metadata keeps the curved phone layout intact. See [DESIGN_V333.md](DESIGN_V333.md) and [VERIFICATION_V333.md](VERIFICATION_V333.md). Version 3.3.2 fixed actual-size widget previews; version 3.3.1 introduced Timeline widgets. Saved layout/zone/theme preferences remain intact. Previous APKs and the [verified v3.3.0 recovery checkpoint](RESTORE_V330.md) remain available. Original generated imagery and [prompts](design/brand-v322/prompts.json) are retained.
+![Original illustration of a Malaysian-inspired mosque at dawn](docs/assets/readme-mosque.webp)
 
-Privacy cleanup: see [PRIVACY.md](PRIVACY.md). Public source/history and release archives use generic device metadata; private keys and phone-data backups stay local.
+<p align="center">
+  <a href="https://github.com/LeonixZx/waktu-solat-malaysia/releases/download/v3.3.4/Waktu-Solat-Malaysia-v3.3.4-debug.apk"><strong>Download Android APK · v3.3.4</strong></a>
+  &nbsp; · &nbsp; <a href="docs/INSTALL.md">Install guide</a>
+  &nbsp; · &nbsp; <a href="CLONE_AND_BUILD.md">Build your own APK</a>
+  &nbsp; · &nbsp; <a href="CONTRIBUTING.md">Contribute</a>
+</p>
 
-## Run Android
+## Try the app
 
-JDK 21, minSdk 24, compile/target SDK 34, Build Tools 34.0.0, AGP 8.5.2 and the complete Gradle 8.9 wrapper. No system Gradle is required. Java bytecode targets 17 with core library desugaring.
+Download the **debug APK** above on your Android phone or tablet, open it, then allow installation from that browser/file manager when Android asks. Choose your state and official prayer zone on first launch. There is no account to create.
+
+This is a **development pre-release**, distributed directly from GitHub. Android is **3.3.4**; the companion web app is **3.1.0**. An unsigned release APK is also available for developers; it must be signed before installation. See [installation, upgrades and notification setup](docs/INSTALL.md).
+
+## Made for everyday use
+
+| Feature | What you can do |
+| --- | --- |
+| **Prayer times** | Choose from 60 JAKIM zones, see the next prayer and browse the full daily timetable. Validated schedules are cached for offline use. |
+| **Azan & reminders** | Choose Off, Notification or Azan per prayer; create personal reminders before or after a prayer time. |
+| **Home-screen widgets** | Pick next prayer, a wide strip, today's prayers or Daily Plus. Choose Classic/Timeline and Ivory/Noir; supported widgets show named Hijri and Gregorian dates. |
+| **Quran & readings** | Read Arabic with labelled published translations, save your place and download Quran text. Recitation streams on demand. Browse doa, wirid, niat and hadith. |
+| **Daily worship** | Use tasbih, prayer tracking, the Islamic calendar and Kiblat bearing/compass guidance. |
+| **Explore & save** | Discover attributed institutional articles/videos, bookmark content and export/import your local records. |
+
+Malay and English controls, light/dark appearances, and adaptive phone/tablet layouts are included. The companion PWA provides reading, cached timetables and local records in a modern browser; scheduled background azan and Android widgets are Android features.
+
+## A look inside
+
+<table>
+  <tr>
+    <td align="center"><img src="docs/assets/android-home.webp" width="230" alt="Android prayer timetable in the ivory theme" /><br /><strong>Your day at a glance</strong></td>
+    <td align="center"><img src="docs/assets/android-worship.webp" width="230" alt="Android worship hub with grouped readings and tools" /><br /><strong>A place for daily worship</strong></td>
+    <td align="center"><img src="docs/assets/android-dark.webp" width="230" alt="Android prayer dashboard in the dark theme" /><br /><strong>Comfortable after dark</strong></td>
+  </tr>
+</table>
+
+*Actual Android emulator captures using a public sample zone, not personal phone data. Dates/times illustrate the captured session. The mosque banner is original AI-generated decorative artwork.*
+
+### Prayer times on your home screen
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="design/widgets-v333/day-dark-native.png" />
+  <img src="design/widgets-v333/day-light-native.png" width="720" alt="Today's prayers Timeline widget with location, five prayer times and paired Gregorian/Hijri dates" />
+</picture>
+
+*Native renderer preview with labelled sample data. Your launcher determines the space available to a placed widget.*
+
+## Build your own APK
+
+Install **JDK 21**, Android SDK **Platform 34**, **Build Tools 34.0.0**, and **platform-tools**. Set `JAVA_HOME` and `ANDROID_HOME`, or configure your SDK through Android Studio. The Gradle wrapper is included; no system Gradle or private API key is required.
 
 ```powershell
-$env:JAVA_HOME='C:\Program Files\Microsoft\jdk-21.0.12.101-hotspot'
+git clone https://github.com/LeonixZx/waktu-solat-malaysia.git
+cd waktu-solat-malaysia
 .\gradlew.bat :app:assembleDebug
-.\gradlew.bat :app:testDebugUnitTest :app:lintDebug
-.\gradlew.bat :app:assembleRelease
 ```
 
-The SDK is configured at `C:\Users\USER\AppData\Local\Android\Sdk`. The installable development build is `app/build/outputs/apk/debug/app-debug.apk`. The optimized release APK requires publisher signing. Packaged copies are in `deliverables/` after verification.
+On macOS/Linux, use `./gradlew :app:assembleDebug` for the last command.
 
-Dedicated small-phone, standard-phone, large-tablet and Android16 emulator profiles are available for broader Android testing. See [EMULATOR_TESTING.md](EMULATOR_TESTING.md) for the repeatable emulator-only runner and [testing/android-emulators.json](testing/android-emulators.json) for their configuration. Physical tablet checks complement this matrix.
+Your installable APK is **`app/build/outputs/apk/debug/app-debug.apk`**. For Android Studio, open the cloned root folder and choose JDK 21 as the Gradle JDK. [Full setup, testing, signing and troubleshooting →](CLONE_AND_BUILD.md)
 
-## Run the Windows/browser PWA
+**Prefer building in the cloud?** Fork this repo, open **Actions → Build and verify → Run workflow**, and download the **android-debug** artifact when the run passes. GitHub sign-in is required for Actions artifacts. Each build includes a checksum. These use a temporary development signing key, so they may not update an APK signed on another computer.
 
-```powershell
+## Run the web app locally
+
+With **Node.js 24** installed:
+
+```sh
 cd web
 npm ci
 npm run build
 npm run worker:dev -- --port 8787
 ```
 
-Open **http://127.0.0.1:8787**. In Edge or Chrome choose Install app from the browser menu/address bar. Loopback is a secure context; production needs HTTPS. The Worker serves the built SPA plus validated, allowlisted APIs. `npm run dev` provides Vite hot reload while the Worker runs. For production run `npm run deploy` after selecting your own Cloudflare account/domain. No production account is configured or published by this build.
+Open **http://127.0.0.1:8787** and use your browser's Install app option where supported. There is no hosted public web deployment yet. Cloudflare account/domain setup is separate. [Web development details →](CLONE_AND_BUILD.md#web-app)
 
-## Features
+## Explore the source
 
-- Home, Quran, Worship, Explore and Saved appear in exactly one primary menu: bottom tabs below 600 logical units, an 88-unit rail at 600â€“1199, or a 240-unit sidebar at 1200+. Short windows below 480 units of available height use bottom tabs. Settings lives in the rail/sidebar footer or phone toolbar. There is no duplicate drawer/hamburger. Quran and collections use two panes when their actual content area reaches 680 units, has at least 480 units of height and text scaling is at most 130%. Reading width stays bounded. See [IMPLEMENTATION_V31.md](IMPLEMENTATION_V31.md) and [NAVIGATION_UX.md](NAVIGATION_UX.md).
-- Original crescent/arch/clock mark, adaptive/monochrome Android icons, PWA maskable icons, six optimized WebP illustrations, readable ivory/gold and dark themes, Malay/English controls, selectable Arabic and labelled published translations.
-- Official JAKIM schedules for 60 Malaysian zones, eight timetable entries, a grouped five-prayer dashboard, genuine next-prayer countdown, date navigation and validated zone/month caches. No missing prayer time is estimated. All prayer calculations use Asia/Kuala_Lumpur.
-- Four native home widgets: next prayer, wide prayer strip, todayâ€™s five obligatory prayers and Daily Plus. Choose app/independent zone and Automatic/Ivory/Noir appearance. Daily Plus optionally shares recorded/unrecorded prayer tracking with the app. Native measured layouts respect text size; unsupported bounds show a resize cue. Tap opens the displayed date/zone without changing the app default. Add widgets / My widgets provides previews, configuration and manual launcher guidance.
-- Per-prayer Off / Notification / Adhan modes, migrated from v2 flags. Personal reminders support eight anchors, Â±360-minute offsets, weekday selection and next-occurrence previews. Weekdays belong to the anchor prayer's date. Generation identifiers invalidate edited/deleted alarms. Connected background refresh runs approximately every 12 hours. Reboot/time changes plan from disk, outside network receivers. Exact-alarm denial uses approximate delivery and is explained in the interface.
-- Virtualized Quran surahs and ayahs; Basmeih Malay / Sahih International English selection; bookmarks and reading position; streamed Alafasy recitation; resumable selected/full text queues, storage reporting and deletion. Pausing retains the queue. Deleted text cannot be recreated by an older in-flight response. Android uses WorkManager; browser queues resume when reopened/online. Audio is streamed.
-- Searchable doa, wirid, niat and twelve Sahih al-Bukhari readings, with supplied/published translations. Indonesian hadith translation is explicitly labelled. Persistent tasbih, goals, prayer/fasting records, location/sensor-based Kiblat, dual-date calendar and UTC iCalendar export.
-- Reviewed TV JAKIM / Mufti Wilayah / Yaqeen catalog. Genuine publisher thumbnails, click-to-load official YouTube playback, provider links and unavailable states. TV JAKIM's live-channel link is available; the catalog makes no claim that a broadcast is currently live. Articles open their original publisher pages. Hidden video playback pauses. No private publisher credentials or gated services are used.
-- Account-free JSON export/import with preview, merge/replace, stable content IDs and a pre-import recovery copy. Imported personal reminders are disabled. Platform permissions and widget instance IDs are excluded. Android/Web backups use the same versioned contract.
-- PWA offline launch, cached prayer months, downloaded Quran, bundled collections, saved items and tracking through IndexedDB/Workbox. Web provides bearing guidance and calendar export; scheduled background notifications/adhan remain native Android features.
+| Path | Contents |
+| --- | --- |
+| `app/src/main/` | Native Android Java, XML layouts and app assets |
+| `app/src/test/`, `app/src/androidTest/` | JVM and native Android tests |
+| `web/` | React/TypeScript PWA and allowlisted API adapter |
+| `shared/` | Catalog, design tokens, contracts and public test fixtures |
+| `design/` | Original branding/art sources, prompts and current widget previews |
+| `tools/`, `testing/` | Privacy checks, environment checks and opt-in QA tooling |
+| `docs/` | Installation, content rights and historical design/verification notes |
 
-## Source and checks
+The decoded reference app, private keys, phone backups, SDK installations and generated build files are **not build dependencies**. APKs and recovery downloads live in [Releases](https://github.com/LeonixZx/waktu-solat-malaysia/releases), rather than in Git source.
 
-`app/src/main` is the Java/XML app; `web/src` is React/TypeScript/Vite; `web/worker` is the read-only adapter; `shared/` contains versioned tokens, catalog, language map, backup fields and genuine test fixtures. The generated art originals and prompts are under `design/assets/`, and brand SVG masters are under `design/brand/`.
+## Community, privacy & attribution
 
-```powershell
-cd web
-npm test
-npm run test:e2e
-```
+Anyone can clone, study and improve the project-authored code under [GPL v3](LICENSE). Contributions in Bahasa Melayu or English are welcome; please read [CONTRIBUTING.md](CONTRIBUTING.md). Report ordinary bugs through [Issues](https://github.com/LeonixZx/waktu-solat-malaysia/issues), and use the private route in [SECURITY.md](SECURITY.md) for security problems.
 
-Browser tests require the built Worker at port 8787. Android instrumentation requires its separate test APK. Always specify the intended ADB serial. `tools/verify_android_v3.py` changes **only emulator-5554**, restoring emulator size/density/font settings in `finally`; its widget test grants/revokes a temporary emulator bind permission. The system tests are also explicitly emulator-only.
+Personal bookmarks, tracking and reminders stay in local app storage unless you export them. External prayer/content/media providers receive requests when their features are used; see [PRIVACY.md](PRIVACY.md). Source backup does not back up your phone data or signing keys.
 
-Current results and remaining physical checks are in [VERIFICATION_V31.md](VERIFICATION_V31.md). [VERIFICATION_V3.md](VERIFICATION_V3.md) records the earlier baseline. Also see [ARCHITECTURE_V3.md](ARCHITECTURE_V3.md), [API_SOURCES.md](API_SOURCES.md) and [ASSET_PROVENANCE.md](ASSET_PROVENANCE.md). Public release still needs publisher signing and deployment configuration. Physical Kiblat accuracy is not certified by synthetic sensor tests; a trusted-reference comparison is still required. Manual TalkBack listening and long-running OEM battery behavior require final release QA.
+This is an independent community project, with no claimed affiliation to JAKIM or the reference publisher. Third-party materials retain their own terms. **Some inherited content/recording redistribution permissions remain unverified**; see the [content-rights register](docs/CONTENT_RIGHTS.md), [NOTICE](NOTICE.md) and [asset provenance](ASSET_PROVENANCE.md) before redistributing a build. Compass results depend on location, sensors and magnetic interference; no physical direction certification is claimed.
 
-`C:\Tools\waktu-re\` is strictly read-only and is not a build dependency. Existing app preferences, saved IDs, tracking and prayer caches are preserved in place; installation never clears app data.
+**Help make it useful for everyone:** improve accessibility, verify content references, test a launcher, translate interface labels or contribute a focused fix.

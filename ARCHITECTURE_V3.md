@@ -1,6 +1,6 @@
 # v3 implementation notes
 
-For the current v3.1 reader layout, structured reading models, Kiblat quality pipeline and launcher changes, see [IMPLEMENTATION_V31.md](IMPLEMENTATION_V31.md). The 680-unit pane threshold is measured inside the available navigation content area; global navigation breakpoints are unchanged. Current results are in [VERIFICATION_V31.md](VERIFICATION_V31.md).
+For the current v3.1 reader layout, structured reading models, Kiblat quality pipeline and launcher changes, see [IMPLEMENTATION_V31.md](docs/history/IMPLEMENTATION_V31.md). The 680-unit pane threshold is measured inside the available navigation content area; global navigation breakpoints are unchanged. Current results are in [VERIFICATION_V31.md](docs/history/VERIFICATION_V31.md).
 
 ## Design and navigation
 

@@ -1,0 +1,16 @@
+name: Feature idea / Cadangan
+description: Suggest a focused improvement for the community.
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What user problem would this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: Suggested behavior
+      description: Include phone/tablet and accessibility considerations where relevant.
+    validations:
+      required: true

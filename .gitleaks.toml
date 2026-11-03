@@ -1,0 +1,13 @@
+title = "Waktu Solat Malaysia secret scanning"
+
+[extend]
+useDefault = true
+
+# These manifests contain SHA-256 file digests, including files with 'token'
+# or 'key' in their names. Match only checksum rows, never arbitrary content.
+[[allowlists]]
+description = "Historical recovery file checksums are not credentials"
+condition = "AND"
+paths = ['''(?:^|/)recovery/V(?:330_BASELINE|333_SOURCE_FILES)\.json$''']
+regexTarget = "line"
+regexes = ['''^\s*"[^"\r\n]+": "[a-f0-9]{64}",?\s*$''']
